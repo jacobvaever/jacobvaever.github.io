@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>main page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+    
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/projekt">Projekt</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-menu" data-toggle='dropdown' href="#">Benny</a></li>
+      <li><a href="howto_google_maps.asp">Google Maps</a><br></li>
+      <li><a href="#">Sygemelding</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://www.facebook.com">Facebook</a></li>
+          <li><a href="skema.html">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Navbar Forms</h3>
+  <p>Use the .navbar-form class to vertically align form elements (same padding as links) inside the navbar.</p>
+  <p>The .input-group class is a container to enhance an input by adding an icon, text or a button in front or behind it as a "help text".</p>
+  <p>The .input-group-btn class attaches a button next to an input field. This is often used as a search bar:</p>
+</div>
+
+
+
+
+
+<!--   -->
+
+
+
+
+
+<div class="container">
+
+
+
+        <!-- Main component for a primary maketing message or to action -->
+        <dic class="container">
+            <div ng-view></div>
+        </dic>
+    </div>  <!-- Container -->
+
+    
+    <script type="text/javascript" src="Nodejs-test/obj/angular/angular.js"></script>
+    <script type="text/javascript" src="Nodejs-test/obj/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="Nodejs-test/js/app.js"></script>
+    <script type="text/javascript" src="Nodejs-test/js/controllers/homeController.js"></script>
+
+    <!-- -->
+  
+    <script>
+            function includeHTML() {
+              var z, i, elmnt, file, xhttp;
+              /*loop through a collection of all HTML elements:*/
+              z = document.getElementsByTagName("*");
+              for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                  /*make an HTTP request using the attribute value as the file name:*/
+                  xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                      /*remove the attribute, and call this function once more:*/
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                    }
+                  } 
+                  xhttp.open("GET", file, true);
+                  xhttp.send();
+                  /*exit the function:*/
+                  return;
+                }
+              }
+            }
+            </script>
+    <!-- -->
+
+    
+    <!-- Table -->
+    <style>
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+            }
+            
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even){background-color: #f2f2f2}
+            </style>
+            </head>
+            <body>
+            
+            <h2>Responsive Table</h2>
+            <p>If you have a table that is too wide, you can add a container element with overflow-x:auto around the table, and it will display a horizontal scroll bar when needed.</p>
+            <p>Resize the browser window to see the effect. Try to remove the div element and see what happens to the table.</p>
+            
+            <div style="overflow-x:auto;">
+              <table>
+                <tr>
+                  <th></th>
+                  <th>Man</th>
+                  <th>Tir</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                  <th>Points</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                  <td>94</td>
+                </tr>
+                <tr>
+                  <td>Adam</td>
+                  <td>Johnson</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                  <td>67</td>
+                </tr>
+              </table>
+            </div>
+            
+    <!--  -->
+
+<!-- -->
+
+<!--  -->
+
+</body>
+</html>
+
