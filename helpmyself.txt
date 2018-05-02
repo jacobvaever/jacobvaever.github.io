@@ -1,0 +1,2 @@
+press ctrl + shift + b.
+to see the html page looking at.
