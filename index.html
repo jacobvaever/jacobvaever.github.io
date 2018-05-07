@@ -7,21 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script snrc="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- dynamic database Firebase  -->
-  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
-      authDomain: "myplaner-0504.firebaseapp.com",
-      databaseURL: "https://myplaner-0504.firebaseio.com",
-      projectId: "myplaner-0504",
-      storageBucket: "myplaner-0504.appspot.com",
-      messagingSenderId: "219717761"
-    };
-    firebase.initializeApp(config);
-  </script>    
-<script href="main.js"></script>    
+  
   
 
     
@@ -54,6 +40,13 @@
     </form>
   </div>
 </nav>
+<!-- <script>
+  $(document).ready(function(){
+    $("button").click(function(){
+        alert("Name is: " + $("#name").val());
+    });	
+});
+</script> -->
 
 <div class="container">
   <h3>Navbar Forms</h3>
@@ -86,7 +79,21 @@
         </dic>
     </div>  <!-- Container -->
 
-
+  <!-- dynamic database Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+        authDomain: "myplaner-0504.firebaseapp.com",
+        databaseURL: "https://myplaner-0504.firebaseio.com",
+        projectId: "myplaner-0504",
+        storageBucket: "myplaner-0504.appspot.com",
+        messagingSenderId: "219717761"
+      };
+      firebase.initializeApp(config);
+    </script>    
+  <script href="main.js"></script>  
    
   
    

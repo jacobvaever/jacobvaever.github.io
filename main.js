@@ -14,7 +14,7 @@
 
     $(document).ready(function(){
         $("button").click(function(){
-            alert($("#name").val());
+            alert('Name is: ' + $("#name").val());
         });
     });
 
