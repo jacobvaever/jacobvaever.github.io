@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script snrc="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
+  
 
     
 <nav class="navbar navbar-inverse">
@@ -46,7 +47,13 @@
   <p>The .input-group class is a container to enhance an input by adding an icon, text or a button in front or behind it as a "help text".</p>
   <p>The .input-group-btn class attaches a button next to an input field. This is often used as a search bar:</p>
 </div>
-
+<div class="container" style="background-color:#353535; 
+padding: 12px; border-radius: 10px">
+  <form class="form-group" style="margin: 0px;">
+    <input type="text" class="form-control" id="name" placeholder="Enter your name"> 
+    <button class="btn btn-block" type="submit"><b>Submit your name</b></button>
+  </form>
+</div>
 
 
 
@@ -67,47 +74,27 @@
         </dic>
     </div>  <!-- Container -->
 
-    
-    <script type="text/javascript" src="Nodejs-test/obj/angular/angular.js"></script>
-    <script type="text/javascript" src="Nodejs-test/obj/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="Nodejs-test/js/app.js"></script>
-    <script type="text/javascript" src="Nodejs-test/js/controllers/homeController.js"></script>
-
-    <!-- -->
-  
+  <!-- dynamic database Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-            function includeHTML() {
-              var z, i, elmnt, file, xhttp;
-              /*loop through a collection of all HTML elements:*/
-              z = document.getElementsByTagName("*");
-              for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                  /*make an HTTP request using the attribute value as the file name:*/
-                  xhttp = new XMLHttpRequest();
-                  xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                      /*remove the attribute, and call this function once more:*/
-                      elmnt.removeAttribute("w3-include-html");
-                      includeHTML();
-                    }
-                  } 
-                  xhttp.open("GET", file, true);
-                  xhttp.send();
-                  /*exit the function:*/
-                  return;
-                }
-              }
-            }
-            </script>
-    <!-- -->
-
-    
-    <!-- Table -->
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+        authDomain: "myplaner-0504.firebaseapp.com",
+        databaseURL: "https://myplaner-0504.firebaseio.com",
+        projectId: "myplaner-0504",
+        storageBucket: "myplaner-0504.appspot.com",
+        messagingSenderId: "219717761"
+      };
+      firebase.initializeApp(config);
+    </script>    
+  <script src="main.js"></script>  
+   
+  
+   
+  
+  
+  <!-- Table -->
     <style>
             table {
                 border-collapse: collapse;
@@ -190,12 +177,7 @@
               </table>
             </div>
             
-    <!--  -->
-
-<!-- -->
-
-<!--  -->
-
-</body>
+   
+  </body>
 </html>
 
