@@ -8,7 +8,7 @@
 
 $(function(){
     function saveToiletParameters(name) {
-        firebase.database().ref().set({
+        firebase.database().ref('name-base').push().set({
             username: name
         });
         
