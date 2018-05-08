@@ -8,26 +8,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script snrc="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-  
 
     
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/projekt">Projekt</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-menu" data-toggle='dropdown' href="#">Benny</a></li>
-      <li><a href="howto_google_maps.asp">Google Maps</a><br></li>
-      <li><a href="#">Sygemelding</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="https://www.facebook.com">Facebook</a></li>
-          <li><a href="skema.html">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html">Planlækkert</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="projekt.html">Projekter</a></li>
+          <li><a href="egenPlan.html">Egen Plan</a></li>
+          <li><a href="sygemeldninger.html">Sygemeldinger</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Medarbejder planer
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Ole</a></li>
+              <li><a href="#">Karsten</a></li>
+              <li><a href="#">Mathias</a></li> 
+            </ul>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
+  </nav>
+
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
@@ -117,7 +129,7 @@
                 padding: 8px;
             }
             
-            tr:nth-child(even){background-color: #f2f2f2}
+            tr:nth-child(even){background-color: #d14545ee}
             </style>
             </head>
             <body>

@@ -21,11 +21,11 @@
         font-size: 16px; 
     }
 
-    #Toilet {padding-top:50px;height:500px;color: #000; background-color: #1E88E5;}
-    #section2 {padding-top:50px;height:500px;color: #000; background-color: #673ab7;}
-    #section3 {padding-top:50px;height:500px;color: #000; background-color: #ff9800;}
-    #section41 {padding-top:50px;height:500px;color: #000; background-color: #00bcd4;}
-    #section42 {padding-top:50px;height:500px;color: #000; background-color: #009688;}
+    #Murer {padding-top:50px;height:500px;color: #000; background-color:rgb(253, 254, 255);}
+    #Tømre {padding-top:50px;height:500px;color: #000; background-color: rgb(202, 228, 255);}
+    #Maler {padding-top:50px;height:500px;color: #000; background-color: rgb(142, 198, 255);}
+    #Elektriker {padding-top:50px;height:500px;color: #000; background-color:  rgb(112, 182, 253);}
+    #Oprydning {padding-top:50px;height:500px;color: #000; background-color: rgb(83, 169, 255);}
     #table { background-color: rgb(172, 172, 172);}
     /* thead{background-color: #ff0000} */
   </style>
@@ -45,27 +45,29 @@
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#Toilet"><div class='fas fa-bath' style="font-size:32px"></div>Toilet</a></li>
-          <li><a href="#section2">Køkken</a></li>
-          <li><a href="#sectiom3">Section 3</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#section41">Section 4-1</a></li>
-              <li><a href="#section42">Section 4-2</a></li>
-            </ul>
-          </li>
+          <li><a href="#Murer">Murer</a></li>
+          <li><a href="#Tømre">Tømre</a></li>
+          <li><a href="#Maler">Maler</a></li>
+          <li><a href="#Elektriker">Elektriker</a></li>
+          <li><a href="#Oprydning">Oprydning</a></li>
         </ul>
       </div>
     </div>
   </div>
 </nav>    
 
+<<<<<<< HEAD
 <form  method="GET" onsubmit="">
 <div id="Toilet" class="container-fluid">  
   <h1>Murer
       
   </h1>
   <table class="table table-striped" >
+=======
+<form id="Murer" class="container-fluid" action="/test.php">
+  <h1>Murer</h1>
+  <table class="table table-striped" id="table">
+>>>>>>> 782f64858fe0c90f96654df98d74801de9790959
         <thead>
           <tr>
             <th>Opgave:</th>
@@ -114,25 +116,34 @@
         </tbody>
       </table> 
     <button type="submit" value="mure" class="btn btn-default">Gem</button>
+<<<<<<< HEAD
 </div>  
 <div id="section2" class="container-fluid">
   <h1>Section 2</h1>
+=======
+  </form>
+
+<div id="Tømre" class="container-fluid">
+  <h1>Tømre</h1>
+>>>>>>> 782f64858fe0c90f96654df98d74801de9790959
   <script>document.getElementById("demo").innerHTML = x;</script>
   <p id="demo">   </p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section3" class="container-fluid">
-  <h1>Section 3</h1>
+
+<div id="Maler" class="container-fluid">
+  <h1>Maler</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section41" class="container-fluid">
-  <h1>Section 4 Submenu 1</h1>
+<div id="Elektriker" class="container-fluid">
+  <h1>Elektriker</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-<div id="section42" class="container-fluid">
-  <h1>Section 4 Submenu 2</h1>
+
+<div id="Oprydning" class="container-fluid">
+  <h1>Oprydning</h1>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
