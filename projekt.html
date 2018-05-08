@@ -22,23 +22,26 @@
     }
 
     #Murer {padding-top:50px;height:500px;color: #000; background-color:rgb(253, 254, 255);}
-    #Tømre {padding-top:50px;height:500px;color: #000; background-color: rgb(202, 228, 255);}
+    #Tømrer {padding-top:50px;height:500px;color: #000; background-color: rgb(202, 228, 255);}
     #Maler {padding-top:50px;height:500px;color: #000; background-color: rgb(142, 198, 255);}
     #Elektriker {padding-top:50px;height:500px;color: #000; background-color:  rgb(112, 182, 253);}
     #Oprydning {padding-top:50px;height:500px;color: #000; background-color: rgb(83, 169, 255);}
     #table { background-color: rgb(172, 172, 172);}
     /* thead{background-color: #ff0000} */
+    #gem {padding: 10px 17px; margin-top: 5px;}
+    #head1 {background-color: #000000; color:azure}
   </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span>                      
       </button>
       <a class="navbar-brand" href="/">Back</a>
     </div>
@@ -46,20 +49,29 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="#Murer">Murer</a></li>
-          <li><a href="#Tømre">Tømre</a></li>
+          <li><a href="#Tømrer">Tømre</a></li>
           <li><a href="#Maler">Maler</a></li>
           <li><a href="#Elektriker">Elektriker</a></li>
           <li><a href="#Oprydning">Oprydning</a></li>
+          <li></li>
         </ul>
       </div>
     </div>
   </div>
+  <div class="container-fluid" id="head1">
+    <div class="col-md-10">
+      <h1>Møllersmindevej</h1>
+  </div>
+  <div class="col-md-2"></div>
+  </div>
 </nav>    
-
-<form  method="GET" onsubmit="">  
+<div class="container-fluid">
+  <h1>Projekt navn </h1>
+</div>
+<form  method="GET" onsubmit="writeData(this)">  
 <div id="Murer" class="container-fluid">
-  <h1>Murer</h1>
-  <table class="table table-striped">
+  <h2>Murer</h2>
+  <table class="table table-striped" >
         <thead>
           <tr>
             <th>Opgave:</th>
@@ -73,66 +85,229 @@
             <td>Bankegulv op (hele gulvet/rummet)</td>
             <td>
                 <div class="form-group">
-                    <input class="form-control input" type="text" name="job-per" > 
+                    <input class="form-control input" type="text" name="per" > 
                   </div>
             </td>
             <td>
                 <div class="form-group">
-                    <input class="form-control input" type="text" name="job-mas">
+                    <input class="form-control input" type="text" name="mas">
                   </div>
             </td>
             <td>
               <div class="form-group">
-                <input class="form-control input"type="text" name="job-tid">
+                <input class="form-control input"type="text" name="tid">
               </div>
             </td>
           </tr>
           <tr>
-              <td>Bankegulv op (hele gulvet/rummet)</td>
+              <td>lave mad?</td>
               <td>
                   <div class="form-group">
-                      <input class="form-control input" type="text" name="job-per">
+                      <input class="form-control input" type="text" name="per">
                     </div>
               </td>
               <td>
                   <div class="form-group">
-                      <input class="form-control input" type="text" name="job2-mas">
+                      <input class="form-control input" type="text" name="mas">
                     </div>
               </td>
               <td>
                 <div class="form-group">
-                  <input class="form-control input" type="text" name="job2-tid">
+                  <input class="form-control input" type="text" name="tid">
                 </div>
               </td>
           </tr>
         </tbody>
       </table> 
-    <button type="submit" value="mure" class="btn btn-default">Gem</button>
-  </form>
-
-<div id="Tømre" class="container-fluid">
-  <h1>Tømre</h1>
-  <script>document.getElementById("demo").innerHTML = x;</script>
-  <p id="demo">   </p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    
 </div>
-
+<div id="Tømrer" class="container-fluid">
+  <h2>Tømrer</h2>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Opgave:</th>
+        <th>Antal personer:</th>
+        <th>Mængde:</th>
+        <th>Estimeret antal timer:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bankegulv op (hele gulvet/rummet)</td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="per" > 
+              </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="mas">
+              </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input class="form-control input"type="text" name="tid">
+          </div>
+        </td>
+      </tr>
+      <tr>
+          <td>lave mad?</td>
+          <td>
+              <div class="form-group">
+                  <input class="form-control input" type="text" name="per">
+                </div>
+          </td>
+          <td>
+              <div class="form-group">
+                  <input class="form-control input" type="text" name="mas">
+                </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input class="form-control input" type="text" name="tid">
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table> 
+</div>
 <div id="Maler" class="container-fluid">
-  <h1>Maler</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <h2>Maler</h2>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Opgave:</th>
+        <th>Antal personer:</th>
+        <th>Mængde:</th>
+        <th>Estimeret antal timer:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bankegulv op (hele gulvet/rummet)</td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="per" > 
+              </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="mas">
+              </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input class="form-control input"type="text" name="tid">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
 </div>
 <div id="Elektriker" class="container-fluid">
-  <h1>Elektriker</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <h2>Elektriker</h2>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Opgave:</th>
+        <th>Antal personer:</th>
+        <th>Mængde:</th>
+        <th>Estimeret antal timer:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bankegulv op (hele gulvet/rummet)</td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="per" > 
+              </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="mas">
+              </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input class="form-control input"type="text" name="tid">
+          </div>
+        </td>
+      </tr>
+      <tr>
+          <td>lave mad?</td>
+          <td>
+              <div class="form-group">
+                  <input class="form-control input" type="text" name="per">
+                </div>
+          </td>
+          <td>
+              <div class="form-group">
+                  <input class="form-control input" type="text" name="mas">
+                </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input class="form-control input" type="text" name="tid">
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table> 
 </div>
-
 <div id="Oprydning" class="container-fluid">
-  <h1>Oprydning</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <h2>Oprydning</h2>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Opgave:</th>
+        <th>Antal personer:</th>
+        <th>Mængde:</th>
+        <th>Estimeret antal timer:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ryde op indenfor</td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="per" > 
+              </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <input class="form-control input" type="text" name="mas">
+              </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input class="form-control input"type="text" name="tid">
+          </div>
+        </td>
+      </tr>
+      <tr>
+          <td>Ryde op udenfor</td>
+          <td>
+              <div class="form-group">
+                  <input class="form-control input" type="text" name="per">
+                </div>
+          </td>
+          <td>
+              <div class="form-group">
+                  <input class="form-control input" type="text" name="mas">
+                </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <input class="form-control input" type="text" name="tid">
+            </div>
+          </td>
+      </tr>
+    </tbody>
+  </table> 
 </div>
+<button type="submit" value="Submit" class="btn btn-primary" id="gem">Gem</button>
 </form>
 
 

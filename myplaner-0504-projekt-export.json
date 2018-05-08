@@ -1,0 +1,58 @@
+{
+  "Murer" : {
+    "job1" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    },
+    "job2" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    }
+  },
+  "Elektriker" : {
+    "job1" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    },
+    "job2" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    }
+  },
+  "Maler" : {
+    "job1" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    }
+  },
+  "Oprydning" : {
+    "job1" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    },
+    "job2" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    }
+  },
+  "Tømre" : {
+    "job1" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    },
+    "job2" : {
+      "mas" : 0,
+      "per" : 0,
+      "tid" : 0
+    }
+  },
+  "dato" : "08/05/2018"
+}
