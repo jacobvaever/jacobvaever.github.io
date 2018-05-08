@@ -58,7 +58,7 @@
 </div>
 <div class="container" style="background-color:#353535; 
       padding: 12px; border-radius: 10px">
-      <form class="form-group" id="myform" action="/main.js" method="POST" onsubmit="writeToiletParameter(this)">
+      <form class="form-group" enctype="text/plain" method="get" onsubmit="giveittome(this)">
     <input type="text" class="form-control" id="name" placeholder="Enter your name"> 
     <button class="btn btn-block" type="submit" ><b>Submit your name</b></button>
   </form>

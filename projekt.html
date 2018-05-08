@@ -60,9 +60,12 @@
   </div>
 </nav>    
 
-<form id="Toilet" class="container-fluid" action="/test.php">
-  <h1>Murer</h1>
-  <table class="table table-striped" id="table">
+<form  method="GET" onsubmit="">
+<div id="Toilet" class="container-fluid">  
+  <h1>Murer
+      
+  </h1>
+  <table class="table table-striped" >
         <thead>
           <tr>
             <th>Opgave:</th>
@@ -76,17 +79,17 @@
             <td>Bankegulv op (hele gulvet/rummet)</td>
             <td>
                 <div class="form-group">
-                    <input class="form-control input" type="text" name="job1-per" > 
+                    <input class="form-control input" type="text" name="job-per" > 
                   </div>
             </td>
             <td>
                 <div class="form-group">
-                    <input class="form-control input" type="text" name="job1-mas">
+                    <input class="form-control input" type="text" name="job-mas">
                   </div>
             </td>
             <td>
               <div class="form-group">
-                <input class="form-control input"type="text" name="job1-tid">
+                <input class="form-control input"type="text" name="job-tid">
               </div>
             </td>
           </tr>
@@ -94,7 +97,7 @@
               <td>Bankegulv op (hele gulvet/rummet)</td>
               <td>
                   <div class="form-group">
-                      <input class="form-control input" type="text" name="job2-per">
+                      <input class="form-control input" type="text" name="job-per">
                     </div>
               </td>
               <td>
@@ -111,7 +114,7 @@
         </tbody>
       </table> 
     <button type="submit" value="mure" class="btn btn-default">Gem</button>
-  </form>
+</div>  
 <div id="section2" class="container-fluid">
   <h1>Section 2</h1>
   <script>document.getElementById("demo").innerHTML = x;</script>
@@ -133,6 +136,7 @@
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
+</form>
 
 
 </body>
