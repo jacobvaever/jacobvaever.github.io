@@ -50,14 +50,18 @@
 
 <div class="container">
   <h3>Navbar Forms</h3>
+  <button id="test" onclick="haha()" >?</button>
+  <a href="main.js">here!</a>
   <p>Use the .navbar-form class to vertically align form elements (same padding as links) inside the navbar.</p>
   <p>The .input-group class is a container to enhance an input by adding an icon, text or a button in front or behind it as a "help text".</p>
   <p>The .input-group-btn class attaches a button next to an input field. This is often used as a search bar:</p>
 </div>
 <div class="container" style="background-color:#353535; 
       padding: 12px; border-radius: 10px">
+      <form class="form-group" id="myform" action="/main.js" method="POST" onsubmit="writeToiletParameter(this)">
     <input type="text" class="form-control" id="name" placeholder="Enter your name"> 
-    <button class="btn btn-block" type="button"><b>Submit your name</b></button>
+    <button class="btn btn-block" type="submit" ><b>Submit your name</b></button>
+  </form>
 </div>
 
 
@@ -93,7 +97,7 @@
       };
       firebase.initializeApp(config);
     </script>    
-  <script href="main.js"></script>  
+  <script type="text/javascript" src="main.js"></script>  
    
   
    
