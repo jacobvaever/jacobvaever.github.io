@@ -11,7 +11,21 @@
     integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" 
     crossorigin="anonymous">
     </script>
-  <script type="text/javascript" src="main.js"></script>
+  <!-- dynamic database Firebase  -->
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+      authDomain: "myplaner-0504.firebaseapp.com",
+      databaseURL: "https://myplaner-0504.firebaseio.com",
+      projectId: "myplaner-0504",
+      storageBucket: "myplaner-0504.appspot.com",
+      messagingSenderId: "219717761"
+    };
+    firebase.initializeApp(config);
+  </script>    
+<script type="text/javascript" src="main.js"></script> 
 
 
   <style>
