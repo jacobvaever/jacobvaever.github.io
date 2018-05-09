@@ -1,5 +1,8 @@
 // main code script
      // hold op!
+
+
+     
 // function writeFormToDatabase(form) {
 //     var i,j, jobArray,jobName,category,obj,temp;
 //     obj 
@@ -21,8 +24,7 @@
 function writeData(form){
   // var  projectName = document.getElementsById("#projektnavn");
   var projectName = "DTU";
-  alert(projectName);
-    firebase.database().ref('projekt/' + projectName).set({
+    firebase.database().ref('projekt/DTU').set({
         "data" : {
             "Murer" : {
               "job1" : {
