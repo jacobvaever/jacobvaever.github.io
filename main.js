@@ -20,6 +20,11 @@
 //     }
      
 // }
+(function(){
+  const preObjbect = document.getElementById('projektnavn');
+  const dbRefObject = firebase.database().ref().child('projektnavn');
+  dbRefObject.on('value', snap => consol.log(snap.val()));
+})
 
 function writeData(form){
   // var  projectName = document.getElementsById("#projektnavn");
