@@ -19,7 +19,9 @@
 // }
 
 function writeData(form){
-    var projectName = document.getElementsByTagName("h1");
+  // var  projectName = document.getElementsById("#projektnavn");
+  var projectName = "DTU";
+  alert(projectName);
     firebase.database().ref('projekt/' + projectName).set({
         "projekt navn" : projectName,
         "data" : {
