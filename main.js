@@ -23,7 +23,6 @@ function writeData(form){
   var projectName = "DTU";
   alert(projectName);
     firebase.database().ref('projekt/' + projectName).set({
-        "projekt navn" : projectName,
         "data" : {
             "Murer" : {
               "job1" : {
@@ -79,8 +78,7 @@ function writeData(form){
                 "mas" : form.mas[8].value,
                 "tid" : form.tid[8].value
               }
-            },
-            "dato" : date()
+            }
           }
     });
 
