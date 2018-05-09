@@ -24,7 +24,7 @@
 function writeData(form){
   // var  projectName = document.getElementsById("#projektnavn");
   var projectName = "DTU";
-    firebase.database().ref('projekt/DTU').set({
+    firebase.database().ref('DTU').set({
         "data" : {
             "Murer" : {
               "job1" : {
