@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+  <h3 class="w3-bar-item">Projektoversigt2</h3>
+  <a href="#" class="w3-bar-item w3-button">Projekt 1</a>
+  <a href="#" class="w3-bar-item w3-button">Projekt 2</a>
+  <a href="#" class="w3-bar-item w3-button">Projekt 3</a>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:15%">
+
+<div class="w3-container 3" style="font-family:courier; background-color:#ff6000db">
+  <h1 style="font-family:Courier New;"> Projekt 1</h1>
+</div>
+
+
+
+<div class="w3-container">
+<h2>Projekt ses her</h2>
+<p>Tilføj projektnavn med delprojekter og estimeret tid neden</p>
+
+</div>
+
+<div class="w3-container">
+    <h2>Gant diagram</h2>
+    <p style="font-family:courier;"> Oversigt!! over projekter</p>
+    </div>
+
+</div>
+
+<p><a href="#/!">Main</a></p>
+
+<a href="#!red">Projekt 1</a>
+<a href="#!green">Projekt 2</a>
+<a href="#!blue">Projekt 3</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "egenPlan.html"
+    })
+    .when("/red", {
+        templateUrl : "red.htm"
+    })
+    .when("/green", {
+        templateUrl : "green.htm"
+    })
+    .when("/blue", {
+        templateUrl : "Projekt.htm"
+    });
+});
+</script>
+      
+</body>
+</html>
+
+
