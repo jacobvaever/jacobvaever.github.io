@@ -1,73 +1,34 @@
 <!DOCTYPE html>
 <html>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<script src="/Projekt3"></script>
-
-
-<body ng-app="myApp">
+<body>
 
 <!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
-  <h3 class="w3-bar-item">Projektoversigt</h3>
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
   <a href="#" class="w3-bar-item w3-button">Projekt 1</a>
   <a href="#" class="w3-bar-item w3-button">Projekt 2</a>
-  <a href="#" class="w3-bar-item w3-button">Projekt3</a>
+  <a href="Projekt3.htm" class="w3-bar-item w3-button">Projekt 3</a>
 </div>
 
 <!-- Page Content -->
-<div style="margin-left:15%">
+<div style="margin-left:25%">
 
-<div class="w3-container 3" style="font-family:courier; background-color:#ff6000db">
-  <h1 style="font-family:Courier New;"> Projektoversigt</h1>
+<div class="w3-container w3-teal">
+  <h1>My Page</h1>
 </div>
 
-
+<img src="img_car.jpg" alt="Car" style="width:100%">
 
 <div class="w3-container">
-<h2>Projekt</h2>
-<p>Tilføj projektnavn med delprojekter og estimeret tid neden</p>
-
+<h2>Sidebar Navigation Example</h2>
+<p>The sidebar with is set with "style="width:25%".</p>
+<p>The left margin of the page content is set to the same value.</p>
 </div>
 
-<div class="w3-container">
-    <h2>Gant diagram</h2>
-    <p style="font-family:courier;"> Oversigt over projekter og om tid er overholdt</p>
-    </div>
-
 </div>
-
-<p><a href="#/!">Main</a></p>
-
-<a href="#!Projekt 1">Projekt 1</a>
-<a href="#!green">Projekt 2</a>
-<a href="#!Projekt3">Projekt3</a>
-
-<div ng-view></div>
-
-<script>
-var app = angular.module("myApp", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "main.htm"
-    })
-    .when("/red", {
-        templateUrl : "red.htm"
-    })
-    .when("/green", {
-        templateUrl : "green.htm"
-    })
-    .when("/Projekt3", {
-        templateUrl : "Projekt3.htm"
-    });
-});
-</script>
       
 </body>
 </html>
