@@ -17,12 +17,16 @@
   $(document).ready(function(){
     $("#addproj").click(function(){
         $("tbody").append('<tr><th class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span><input type="text" class="form-control" ng-model="subname" placeholder="Navn på Delopgave"/></th><th><span class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span><input type="number" class="form-control" ng-model="subtime" placeholder="Timer det tag"/></span></th></tr>');
-    }),
-    var $()
+    });
+        $("#save").click(function(){
+        var rows = $('table >tbody >tr').length;
+        alert(rows);
+        });
 });
 </script>
-<body>
-  <div class="container" ng-app="newproject" ng-controller="fromCtrl">
+<body ng-app="">
+  <div class="container" ng-controller="fromCtrl">
+      <h2> Projektets navn {{name}}</h2>
     <table class="table">
       <thead>
         <tr>
@@ -50,14 +54,12 @@
         </tr>
       </tbody>  
     </table>
+    <button ng-click="saving()" class="btn btn-info" id="save">Gem Projekt</button>
   </div>
 
 
 
-  <!-- <div ng-app="">
-      <input type="text" ng-model="q1">
-      <input type="text" ng-model="q2">
-      <input type="text" ng-model="q3">  
+  <!-- <div> 
       <div class="progress">
       <div id="køkken" class="progress-bar progress-bar" role="progressbar" style="width:{{q1}}% ">
         Køkken
@@ -72,5 +74,24 @@
   </div> -->
 
 
+<script>
+(function(){
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+    authDomain: "myplaner-0504.firebaseapp.com",
+    databaseURL: "https://myplaner-0504.firebaseio.com",
+    projectId: "myplaner-0504",
+    storageBucket: "myplaner-0504.appspot.com",
+    messagingSenderId: "219717761"
+  };
+  firebase.initializeApp(config);
+});
+var app = angular.modle([],[]);
+app.controller('formCtrl',function($scope){
+  $scope.name = 'hej';
+});
+
+</script>
 </body>
 </html>
