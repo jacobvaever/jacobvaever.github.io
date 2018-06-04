@@ -16,19 +16,9 @@
   
   $(document).ready(function(){
     $("#addproj").click(function(){
-        $("tbody").append(<tr>
-          <th class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <input type="text" class="form-control" ng-model="subname" placeholder="Navn på Delopgave"/>
-          </th>
-          <th>
-            <span class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-              <input type="number" class="form-control" ng-model="subtime" placeholder="Timer det tag"/>
-            </span>
-          </th>
-        </tr>);
-    });
+        $("tbody").append('<tr><th class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span><input type="text" class="form-control" ng-model="subname" placeholder="Navn på Delopgave"/></th><th><span class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span><input type="number" class="form-control" ng-model="subtime" placeholder="Timer det tag"/></span></th></tr>');
+    }),
+    var $()
 });
 </script>
 <body>
@@ -38,7 +28,7 @@
         <tr>
           <th class="input-group">
             <span class="input-group-addon">Projektnavn</span>
-            <input type="text" class="form-control" ng-model="name"/>
+            <input type="text" class="form-control" ng-model="name" />
           </th>
           <th>
             <button id="addproj" class="btn" >Tilføj Delopgave</button>
