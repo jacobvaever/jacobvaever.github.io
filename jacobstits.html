@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sygemeldninger</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+<style>
+  #køkken {background-color: aqua}
+  
+</style>
+<script>
+  
+  $(document).ready(function(){
+    $("#addproj").click(function(){
+        $("tbody").append(<tr>
+          <th class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <input type="text" class="form-control" ng-model="subname" placeholder="Navn på Delopgave"/>
+          </th>
+          <th>
+            <span class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+              <input type="number" class="form-control" ng-model="subtime" placeholder="Timer det tag"/>
+            </span>
+          </th>
+        </tr>);
+    });
+});
+</script>
+<body>
+  <div class="container" ng-app="newproject" ng-controller="fromCtrl">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="input-group">
+            <span class="input-group-addon">Projektnavn</span>
+            <input type="text" class="form-control" ng-model="name"/>
+          </th>
+          <th>
+            <button id="addproj" class="btn" >Tilføj Delopgave</button>
+          </th>
+        </tr> 
+      </thead>
+      <tbody>
+        <tr>
+          <th class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <input type="text" class="form-control" ng-model="subname" placeholder="Navn på Delopgave"/>
+          </th>
+          <th>
+            <span class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+              <input type="number" class="form-control" ng-model="subtime" placeholder="Timer det tag"/>
+            </span>
+          </th>
+        </tr>
+      </tbody>  
+    </table>
+  </div>
+
+
+
+  <!-- <div ng-app="">
+      <input type="text" ng-model="q1">
+      <input type="text" ng-model="q2">
+      <input type="text" ng-model="q3">  
+      <div class="progress">
+      <div id="køkken" class="progress-bar progress-bar" role="progressbar" style="width:{{q1}}% ">
+        Køkken
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{q2}}%">
+        Warning
+      </div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{q3}}%">
+        Danger
+      </div>
+    </div>
+  </div> -->
+
+
+</body>
+</html>
