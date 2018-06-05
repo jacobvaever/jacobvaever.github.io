@@ -1,15 +1,39 @@
 
 <html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
-<script src="test.js"></script>
-<body>
-<script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
 
+<body>
+<script >
+    (function(){
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+      authDomain: "myplaner-0504.firebaseapp.com",
+      databaseURL: "https://myplaner-0504.firebaseio.com",
+      projectId: "myplaner-0504",
+      storageBucket: "myplaner-0504.appspot.com",
+      messagingSenderId: "219717761"
+    };
+    firebase.initializeApp(config);
+
+// document reference
+const preObj = document.getElementById('object');
+
+// database reference
+const dbRefObj = firebase.database().ref().child('object');
+
+// sync object changes
+dbRefObj.once('value').then(function(snapshot) {
+    consol.log(snapshot.val());
+});
+});
 </script>
-<div>
-<button onclick="databar()" >Tryk</button>
-</div>
+
+<p id="object"></p'object'>
 
 <!-- 
 <div ng-app="myApp" ng-controller="myCtrl">
