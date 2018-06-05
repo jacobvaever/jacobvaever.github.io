@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sygemeldninger</title>
+        <title>Nyt Projekt</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
@@ -24,31 +24,43 @@
     </head>
 <script>
   $(document).ready(function(){
-    $("#addproj").click(function(){
+    $("#addproj").click(function(){ // adds a new line of parameter 
       var rows = $('table >tbody >tr').length;
-      $("tbody").append('<tr><th class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+'" type="text" class="form-control" ng-model="subname'+rows+'" placeholder="Navn på Delopgave"/></th><th><span class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span><input id="subtime'+rows+'" type="number" class="form-control" ng-model="subtime'+rows+'" placeholder="Timer det tag"/></span></th></tr>');
+      $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
+        '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
+        '" type="text" class="form-control" ng-model="subname'+rows+
+        '" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
+        '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
+        '</i></span><input id="subtime'+rows+'" type="number" class="form-control" ng-model="subtime'+
+        rows+'" placeholder="Timer det tag"/></span></th></tr>');
     });
 
-    $("#save").click(function(){
+    $("#save").click(function(){ // saves the project in the database under its name
       var rows = $('table >tbody >tr').length;
       var temp = $('#name').val();
-      var subNames = [],subTimes = [];
-      for (i = 0; i < rows; i++){
-        subNames[i] = $("#subname"+i).val();
-        subTimes[i] = $("#subtime"+i).val();    
-      }
-      data = {
-              subNames,
-              subTimes
-             };
+      
+      if(temp != [] ){  
+        var subNames = [],subTimes = [];
+        for (i = 0; i < rows; i++){
+          subNames[i] = $("#subname"+i).val();
+          subTimes[i] = $("#subtime"+i).val();
+          if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
+            break;
+          }
+        }
+        data = {
+                subNames,
+                subTimes
+              };
 
-      firebase.database().ref('projekter/' + temp).set(data)
-        .then(function(snapshot) {
-            //success(); // some success method
-        }, function(error) {
-            console.log('error' + error);
-            //error(); // some error method
-        });
+        firebase.database().ref('projekter/' + temp).set(data)
+          .then(function(snapshot) {
+              //success(); // some success method
+          }, function(error) {
+              console.log('error' + error);
+              //error(); // some error method
+          });
+      }else{alert('Du skal som minimum udfylde Projektnavn')};
                   
     });
     
@@ -61,7 +73,7 @@
         <tr>
           <th class="input-group">
             <span class="input-group-addon">Projektnavn</span>
-            <input type="text" id="name" class="form-control" ng-model="name"/>
+            <input type="text" id="name" class="form-control" ng-model="name" />
           </th>
           <th>
             <button id="addproj" class="btn" >Tilføj Delopgave</button>
