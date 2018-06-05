@@ -1,25 +1,12 @@
 // main code script
      // hold op!
+function newProject(){
+  
+};
 
 
-     
-// function writeFormToDatabase(form) {
-//     var i,j, jobArray,jobName,category,obj,temp;
-//     obj 
-//     category = document.getElementsByTagName("h2"); 
-//     for (j in category){
-//         category[j-1] += ":"; 
-//         for (i in $("dmdd").length){
-//             jobName[i-1] = "job"+i+":";
-//             temp[i-1] = {"job"i:{
-//                 "per":form.per[i-1].value,
-//                 "mas":form.mas[i-1].value,
-//                 "tid":form.tid[i-1].value}};
-//             }
-//          obj[j-1] = {category[j-1]:temp[j-1]};
-//     }
-     
-// }
+
+
 (function(){
       // Initialize Firebase
       var config = {
