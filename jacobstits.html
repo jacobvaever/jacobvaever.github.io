@@ -38,23 +38,29 @@
     $("#save").click(function(){ // saves the project in the database under its name
       var rows = $('table >tbody >tr').length;
       var temp = $('#name').val();
-      var subNames = [],subTimes = [];
-      for (i = 0; i < rows; i++){
-        subNames[i] = $("#subname"+i).val();
-        subTimes[i] = $("#subtime"+i).val();    
-      }
-      data = {
-              subNames,
-              subTimes
-             };
+      
+      if(temp != [] ){  
+        var subNames = [],subTimes = [];
+        for (i = 0; i < rows; i++){
+          subNames[i] = $("#subname"+i).val();
+          subTimes[i] = $("#subtime"+i).val();
+          if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
+            break;
+          }
+        }
+        data = {
+                subNames,
+                subTimes
+              };
 
-      firebase.database().ref('projekter/' + temp).set(data)
-        .then(function(snapshot) {
-            //success(); // some success method
-        }, function(error) {
-            console.log('error' + error);
-            //error(); // some error method
-        });
+        firebase.database().ref('projekter/' + temp).set(data)
+          .then(function(snapshot) {
+              //success(); // some success method
+          }, function(error) {
+              console.log('error' + error);
+              //error(); // some error method
+          });
+      }else{alert('Du skal som minimum udfylde Projektnavn')};
                   
     });
     
@@ -67,7 +73,7 @@
         <tr>
           <th class="input-group">
             <span class="input-group-addon">Projektnavn</span>
-            <input type="text" id="name" class="form-control" ng-model="name"/>
+            <input type="text" id="name" class="form-control" ng-model="name" />
           </th>
           <th>
             <button id="addproj" class="btn" >Tilføj Delopgave</button>
