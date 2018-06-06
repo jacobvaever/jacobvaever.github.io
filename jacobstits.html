@@ -5,22 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-            <!-- dynamic database Firebase  -->
-        <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-              apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
-              authDomain: "myplaner-0504.firebaseapp.com",
-              databaseURL: "https://myplaner-0504.firebaseio.com",
-              projectId: "myplaner-0504",
-              storageBucket: "myplaner-0504.appspot.com",
-              messagingSenderId: "219717761"
-            };
-            firebase.initializeApp(config);
-        </script> 
+
     </head>
 <script>
   var jq = $.noConflict();
@@ -53,13 +38,13 @@
                 subTimes
               };
 
-        firebase.database().ref('projekter/' + temp).set(data)
-          .then(function(snapshot) {
-              //success(); // some success method
-          }, function(error) {
-              console.log('error' + error);
-              //error(); // some error method
-          });
+        firebase.database().ref('projekter/' + temp).set(data,function(error){
+          if(error) {
+            console.log('write to database failed!');
+          } else {
+            console.log('data saved successfully!');
+          };
+        });
       }else{alert('Du skal som minimum udfylde Projektnavn')};
                   
     });
