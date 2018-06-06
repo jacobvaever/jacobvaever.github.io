@@ -14,10 +14,10 @@
 </head>
 <body ng-app="myApp">
 
-    <p><a href="/">Main</a></p>
+    <p><a href="#/">Main</a></p>
     
-    <a href="/london">City 1</a>
-    <a href="/paris">City 2</a>
+    <a href="#london">City 1</a>
+    <a href="#paris">City 2</a>
     
     <p>Click on the links.</p>
     
@@ -27,11 +27,8 @@
     
     <script>
     var app = angular.module("myApp", ["ngRoute"]);
-    app.config(function($routeProvider) {
-        $routeProvider
-        .when("/", {
-            templateUrl : "main.htm",
-        })
+    app.config(function($routeProvider,$locationProvider) {
+      $routeProvider
         .when("/london", {
             templateUrl : "london.html",
             controller : "londonCtrl"
@@ -39,7 +36,11 @@
         .when("/paris", {
             templateUrl : "paris.html",
             controller : "parisCtrl"
+        })
+        .otherwise("/",{
+          template : '<h4> Nothing here </h4>'
         });
+      $locationProvider.hashPrefix('');
     });
     app.controller("londonCtrl", function ($scope) {
         $scope.msg = "I love London";
