@@ -1,134 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-  <title>Hjem</title>
+  <title>PlanLækkert</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script snrc="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-route.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+</head>
+<body ng-app="myApp">
 
+    <p><a href="/">Main</a></p>
     
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-        <a class="navbar-brand" href="#/!">Planlækkert</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#/projekt">Projekter</a></li>
-          <li><a href="/egenPlan">Egen Plan</a></li>
-          <li><a href="/jacobstits">jacobstits</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="/medarbejder">Medarbejder planer
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Ole</a></li>
-              <li><a href="#">Karsten</a></li>
-              <li><a href="#">Mathias</a></li> 
-            </ul>
-          </li>
-          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-        </ul>
-      </div>
-    </div>
-</nav>
-<div class="container-fluid" style="margin-top:50px;">
-  <h1>Forsiden er hvor projekt skemaet kommer til at være</h1>
-  <pre id="jacob"> </pre>
-</div>   
-  
-  
-  <!-- Table -->
-    <style>
-            table {
-                border-collapse: collapse;
-                border-spacing: 0;
-                width: 100%;
-                border: 1px solid #ddd;
-            }
-            
-            th, td {
-                text-align: left;
-                padding: 8px;
-            }
-            
-            tr:nth-child(even){background-color: #d14545ee}
-            </style>
-            </head>
-            <body>
-            
-            <h2>Tabel</h2>
-            <p> Tabellen kan vise hvem er på arbejde og hvem er ikke på arbejde eller hvor arbejder de forskellige medarbejder og med hvad.</p>
-            
-            <div style="overflow-x:auto;">
-              <table>
-                <tr>
-                  <th></th>
-                  <th>Man</th>
-                  <th>Tir</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                  <th>Points</th>
-                </tr>
-                <tr>
-                  <td>Jill</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                  <td>50</td>
-                </tr>
-                <tr>
-                  <td>Eve</td>
-                  <td>Jackson</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                  <td>94</td>
-                </tr>
-                <tr>
-                  <td>Adam</td>
-                  <td>Johnson</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                  <td>67</td>
-                </tr>
-              </table>
-            </div>
-            
-   
-  </body>
-  <script type="text/javascript" src="main.js"></script>
+    <a href="/london">City 1</a>
+    <a href="/paris">City 2</a>
+    
+    <p>Click on the links.</p>
+    
+    <p>Note that each "view" has its own controller which each gives the "msg" variable a value.</p>
+    
+    <div ng-view></div>
+    
+    <script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            templateUrl : "main.htm",
+        })
+        .when("/london", {
+            templateUrl : "london.html",
+            controller : "londonCtrl"
+        })
+        .when("/paris", {
+            templateUrl : "paris.html",
+            controller : "parisCtrl"
+        });
+    });
+    app.controller("londonCtrl", function ($scope) {
+        $scope.msg = "I love London";
+    });
+    app.controller("parisCtrl", function ($scope) {
+        $scope.msg = "I love Paris";
+    });
+    
+    </script>
+    
+    </body>
 </html>
 
