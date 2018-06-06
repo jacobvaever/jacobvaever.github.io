@@ -14,6 +14,7 @@
 </head>
 <body ng-app="myApp">
 
+
     <p><a href="#/">Main</a></p>
     
     <a href="#london">City 1</a>
@@ -25,7 +26,15 @@
     
     <div ng-view></div>
     
-    <script>
+    <script> // database
+    $(document).ready(function(){
+
+
+      
+    });
+    </script>
+    <script> // routing features 
+$(document).ready(function(){
     var app = angular.module("myApp", ["ngRoute"]);
     app.config(function($routeProvider,$locationProvider) {
       $routeProvider
@@ -47,8 +56,8 @@
     });
     app.controller("parisCtrl", function ($scope) {
         $scope.msg = "I love Paris";
-    });
-    
+    }); 
+});
     </script>
     
     </body>
