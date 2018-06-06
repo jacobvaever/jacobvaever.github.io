@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projekt1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+    <!-- To hide/show input -->
+    <script>
+      $(document).ready(function(){
+          $("button").click(function(){
+              $(in1).toggle();
+          });
+      });
+      </script>
+
+    <script>
+      $(document).ready(function(){
+          $("button2").click(function(){
+              $(in2).toggle();
+          });
+      });
+      </script>
+
+      <script>
+        $(document).ready(function(){
+            $("button3").click(function(){
+                $(in3).toggle();
+            });
+        });
+        </script>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:19%">
+  <ol>
+    <h3 href="egenPlan.html" class="w3-bar-item">Projektoversigt</h3>
+    <a href="egenPlan.html" class="w3-bar-item">Oversigt</a>
+    <a href="Projekt1.htm" class="w3-bar-item w3-button">Projekt 1</a>
+    <a href="Projekt2.htm" class="w3-bar-item w3-button">Projekt 2</a>
+    <a href="Projekt3.htm" class="w3-bar-item w3-button">Projekt 3</a>
+  </ol>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:19%">
+
+  <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
+    <h1 style="font-family:Courier New;"> Projekt 1</h1>
+  </div>
+
+  <!-- Estimeret tid -->
+  <div class="w3-container">
+    <h2>Estimeret tid</h2>
+    <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
+  </div>
+
+  <div class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+    <div class="progress">
+    <div id="køkken1" class="progress-bar progress-bar" role="progressbar" style="width:30% ">
+      Køkken
+    </div>
+    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%">
+      Bad
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+      Terasse
+    </div>
+      
+    </div>
+  </div>
+
+
+  <!-- Virkelig tid -->
+  <div ng-app="" class="w3-container" style="width:80%; position: absolute; left: 19%; top:22%">
+    <h2>Virkelig tid</h2>
+    <p>Her ses hvor lang tid opgaverne har taget</p>  
+    <p>Indtast antallet timer delopgaven tog</p> 
+
+    
+    <p >  </p>
+    <button type="button" class="btn btn-primary">Køkken færdigt</button>
+    <p id="in1">Indtast tid for køkken:  </p>
+    <input id="in1" type="number" ng-model="q1">
+    <button id="in1" type="button" class="btn btn-primary">FÆRDIG</button>
+
+    <p >  </p>
+    <button2 type="button2" class="btn btn-primary">Bad færdigt</button2>
+    <input id="in2" type="number" ng-model="q2">
+    <button2 id="in2" type="button2" class="btn btn-primary">FÆRDIG</button2>
+
+    <p >  </p>
+    <button3 type="button3" class="btn btn-primary">Terasse færdig</button3>
+    <input id ="in3" type="number" ng-model="q3">
+    <button3 id="in3" type="button3" class="btn btn-primary">FÆRDIG</button3>
+
+
+    <div class="progress" >
+      <div class="progress-bar progress-bar2" role="progressbar" style="width:{{q1}}% ">  <!--  tid1 ved if! -->
+        Køkken
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{q2}}%">
+        Bad
+      </div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{q3}}%">
+        Terasse
+      </div>
+    </div>
+
+  </div>
+   
+
+
+  
+
+<p id="demo"></p>
+
+<script>
+function myFunction(q1) {
+    var tid1;
+    if (q1) {
+      tid1 = q1;
+    } else {
+      tid1 = 30;
+    }
+}
+</script>
+
+
+
+</head>
+<body>
+
+
+
+
+  
+   </div>
+
+   
+
+  <!-- Forslag ændring -->
+  <div class="w3-container" style="position: absolute; left: 19%; top:64%">
+    <h2>Forslag til ændring</h2>
+    <p>Her ses forslag til ændring..</p>
+  </div>
+
+  <div class="w3-container" style="width:80%; position: absolute;
+  left: 19%; top:74%"> 
+  <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p> 
+     <div class="progress">
+     <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:10% ">
+       Køkken
+     </div>
+     <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+       Bad
+     </div>
+     <div class="progress-bar progress-bar-danger" role="progressbar" style="width:30%">
+       Terasse
+     </div>
+   </div>
+   <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p>
+ </div> 
+
+
+ 
+
+</div>
+
+
+      
+</body>
+</html>
+
+

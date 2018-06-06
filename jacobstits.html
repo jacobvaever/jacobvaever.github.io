@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nyt Projekt</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+            <!-- dynamic database Firebase  -->
+        <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+              authDomain: "myplaner-0504.firebaseapp.com",
+              databaseURL: "https://myplaner-0504.firebaseio.com",
+              projectId: "myplaner-0504",
+              storageBucket: "myplaner-0504.appspot.com",
+              messagingSenderId: "219717761"
+            };
+            firebase.initializeApp(config);
+        </script> 
+    </head>
+<script>
+  $(document).ready(function(){
+    $("#addproj").click(function(){ // adds a new line of parameter 
+      var rows = $('table >tbody >tr').length;
+      $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
+        '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
+        '" type="text" class="form-control" ng-model="subname'+rows+
+        '" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
+        '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
+        '</i></span><input id="subtime'+rows+'" type="number" class="form-control" ng-model="subtime'+
+        rows+'" placeholder="Timer det tag"/></span></th></tr>');
+    });
+
+    $("#save").click(function(){ // saves the project in the database under its name
+      var rows = $('table >tbody >tr').length;
+      var temp = $('#name').val();
+      
+      if(temp != [] ){  
+        var subNames = [],subTimes = [];
+        for (i = 0; i < rows; i++){
+          subNames[i] = $("#subname"+i).val();
+          subTimes[i] = $("#subtime"+i).val();
+          if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
+            break;
+          }
+        }
+        data = {
+                subNames,
+                subTimes
+              };
+
+        firebase.database().ref('projekter/' + temp).set(data)
+          .then(function(snapshot) {
+              //success(); // some success method
+          }, function(error) {
+              console.log('error' + error);
+              //error(); // some error method
+          });
+      }else{alert('Du skal som minimum udfylde Projektnavn')};
+                  
+    });
+    
+});
+</script>
+<body>
+  <div class="container" ng-app="" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="input-group">
+            <span class="input-group-addon">Projektnavn</span>
+            <input type="text" id="name" class="form-control" ng-model="name" />
+          </th>
+          <th>
+            <button id="addproj" class="btn" >Tilføj Delopgave</button>
+          </th>
+        </tr> 
+      </thead>
+      <tbody>
+        <tr>
+          <th class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <input id="subname0" type="text" class="form-control" ng-model="subname0" placeholder="Navn på Delopgave"/>
+          </th>
+          <th>
+            <span class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+              <input id="subtime0" type="number" class="form-control" ng-model="subtime0" placeholder="Timer det tag"/>
+            </span>
+          </th>
+        </tr>
+      </tbody>  
+    </table>
+    <button class="btn btn-info" id="save">Gem Projekt</button>
+  </div>
+</div>
+
+  <!-- <div ng-app="hej"> 
+    <input type="number" ng-model="q1">
+    <input type="number" ng-model="q2">
+    <input type="number" ng-model="q3">
+  
+      <div class="progress">
+      <div id="køkken" class="progress-bar progress-bar" role="progressbar" style="width:{{90*q1/(q1+q2+q3)}}%">
+        Køkken
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{90*q2/(q1+q2+q3)}}%">
+        Warning
+      </div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{90*q3/(q1+q2+q3)}}%">
+        Danger
+      </div>
+      <div class="progress-bar progress-bar-info" role="progressbar" style="width:10%">
+          buffer
+        </div>
+    </div>
+  </div> -->
+
+
+
+</body>
+</html>

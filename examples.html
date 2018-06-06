@@ -1,0 +1,75 @@
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+
+<body>
+<script >
+    (function(){
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+      authDomain: "myplaner-0504.firebaseapp.com",
+      databaseURL: "https://myplaner-0504.firebaseio.com",
+      projectId: "myplaner-0504",
+      storageBucket: "myplaner-0504.appspot.com",
+      messagingSenderId: "219717761"
+    };
+    firebase.initializeApp(config);
+
+// document reference
+const preObj = document.getElementById('object');
+
+// database reference
+const dbRefObj = firebase.database().ref().child('object');
+
+// sync object changes
+dbRefObj.once('value').then(function(snapshot) {
+    consol.log(snapshot.val());
+});
+});
+</script>
+
+<p id="object"></p>
+
+<!-- 
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<input ng-model="myCtrl.name">
+
+<h1>My name is {{myCtrl.name}}</h1>
+
+</div>
+
+<script>
+angular.module('myApp', [])
+.controller('myCtrl', function($scope){
+    $scope.name = "";
+	
+});
+</script>
+
+<p>When you change the name in the input field, the changes will affect the model, and it will also affect the name property in the controller.</p>
+
+<div ng-app="countApp" ng-controller="Ctrl as my">
+
+        <button ng-click="my.myFunction()">Click Me!</button>
+        
+        <p>{{ my.count }}</p>
+        
+        </div>
+        <script>
+        angular.module('countApp', [])
+        .controller('Ctrl', function Ctrl() {
+            this.count = 0;
+            this.myFunction = function go() {
+                this.count++;
+            }
+        });
+        //angular.bootstrap(document,['countApp']);
+        </script>  -->
+</body>
+</html>
