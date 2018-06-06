@@ -30,7 +30,9 @@
     <script> // database
     
     </script>
-    <script> // routing features 
+    <script> // routing features
+var jq = $.noConflict();
+jq(document).ready(function(){ 
     var app = angular.module("myApp", ["ngRoute"]);
     app.config(function($routeProvider,$locationProvider) {
       $routeProvider
@@ -49,10 +51,12 @@
     });
     app.controller("londonCtrl", function ($scope) {
         $scope.msg = "I love London";
+        
     });
     app.controller("parisCtrl", function ($scope) {
         $scope.msg = "I love Paris";
     }); 
+});
     </script>
     
     </body>
