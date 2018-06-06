@@ -23,28 +23,28 @@
         </script> 
     </head>
 <script>
-  $(document).ready(function(){
-    $("#addproj").click(function(){ // adds a new line of parameter 
-      var rows = $('table >tbody >tr').length;
-      $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
+  var jq = $.noConflict();
+  jq(document).ready(function(){
+    jq("#addproj").click(function(){ // adds a new line of parameter 
+      var rows = jq('table >tbody >tr').length;
+      jq("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
         '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
-        '" type="text" class="form-control" ng-model="subname'+rows+
-        '" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
+        '" type="text" class="form-control" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
         '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
-        '</i></span><input id="subtime'+rows+'" type="number" class="form-control" ng-model="subtime'+
-        rows+'" placeholder="Timer det tag"/></span></th></tr>');
+        '</i></span><input id="subtime'+rows+'" type="number" class="form-control"'+
+        ' placeholder="Timer det tag"/></span></th></tr>');
     });
 
-    $("#save").click(function(){ // saves the project in the database under its name
-      var rows = $('table >tbody >tr').length;
-      var temp = $('#name').val();
+    jq("#save").click(function(){ // saves the project in the database under its name
+      var rows = jq('table >tbody >tr').length;
+      var temp = jq('#name').val();
       
       if(temp != [] ){  
         var subNames = [],subTimes = [];
         for (i = 0; i < rows; i++){
-          subNames[i] = $("#subname"+i).val();
-          subTimes[i] = $("#subtime"+i).val();
-          if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
+          subNames[i] = jq("#subname"+i).val();
+          subTimes[i] = jq("#subtime"+i).val();
+          if((jq("#subtime"+(i+1)).val() && jq("#subname"+(i+1)).val()) == ""){
             break;
           }
         }
@@ -67,13 +67,13 @@
 });
 </script>
 <body>
-  <div class="container" ng-app="" >
+  <div class="container" >
     <table class="table">
       <thead>
         <tr>
           <th class="input-group">
             <span class="input-group-addon">Projektnavn</span>
-            <input type="text" id="name" class="form-control" ng-model="name" />
+            <input type="text" id="name" class="form-control"/>
           </th>
           <th>
             <button id="addproj" class="btn" >Tilføj Delopgave</button>
@@ -84,12 +84,12 @@
         <tr>
           <th class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <input id="subname0" type="text" class="form-control" ng-model="subname0" placeholder="Navn på Delopgave"/>
+            <input id="subname0" type="text" class="form-control"  placeholder="Navn på Delopgave"/>
           </th>
           <th>
             <span class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-              <input id="subtime0" type="number" class="form-control" ng-model="subtime0" placeholder="Timer det tag"/>
+              <input id="subtime0" type="number" class="form-control"  placeholder="Timer det tag"/>
             </span>
           </th>
         </tr>
