@@ -7,8 +7,9 @@
 <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
 
 <body>
-<script >
-    (function(){
+<script>
+$(document).ready(function(){
+
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
@@ -22,18 +23,78 @@
 
 // document reference
 const preObj = document.getElementById('object');
+const ulList = document.getElementById('list');
 
 // database reference
 const dbRefObj = firebase.database().ref().child('object');
+const dbRefList = dbRefObj.child("hobby");
+
 
 // sync object changes
-dbRefObj.once('value').then(function(snapshot) {
-    consol.log(snapshot.val());
+dbRefObj.on('value', function(snapshot) {
+    var numProjcet = snapshot.numChildren();
+    preObj.innerText = JSON.stringify(snapshot.val(),null,3);
+
 });
+
+// sync list additions
+dbRefList.on('child_added', function(snap){
+    const li = document.createElement('li');
+    li.innerText = snap.val();
+    li.id = snap.key;
+    ulList.appendChild(li);
+
 });
+
+// sync list changes
+dbRefList.on('child_changed', function(snap){
+    const liChanged = document.getElementById(snap.key);
+    liChanged.innerText = snap.val();
+});
+
+// sycn list removings
+dbRefList.on('child_removed',function(snap){
+    const liRemoved = document.getElementById(snap.key);
+    liRemoved.innerText = snap.val();
+});
+
+
+// trying it all on the real data
+
+const dbRefproj = firebase.database().ref().child('projekter');
+
+dbRefproj.on('value', function(snapshot) {
+    var numProjcet = snapshot.numChildren();
+    $("#proj").text(JSON.stringify(snapshot.val(),null,3));
+});
+
+dbRefproj.on('child_added',function(snap){
+    $("#list2").append('<li id="'+snap.key+'">'+snap.key+'</li>');
+});
+// var app = angular.module('myApp',[]);
+// app.controller('ctrl',function($scope){
+    
+
+// });
+
+
+});
+
+
 </script>
 
-<p id="object"></p>
+<pre id="object" style="font-size: 22px"></pre>
+
+<div>
+    <ul id="list"></ul>
+</div>
+<pre id="proj"></pre>
+<div>
+    <ul id="list2"></ul>
+</div>
+
+<pre id="test" ></pre>
+<!-- <div ng-app="myApp" ng-controller="ctrl">{{hobby}}</div> -->
 
 <!-- 
 <div ng-app="myApp" ng-controller="myCtrl">
