@@ -32,10 +32,9 @@
 
 
       
-    });
+    }); 
     </script>
     <script> // routing features 
-(function(){
     var app = angular.module("myApp", ["ngRoute"]);
     app.config(function($routeProvider,$locationProvider) {
       $routeProvider
@@ -58,7 +57,6 @@
     app.controller("parisCtrl", function ($scope) {
         $scope.msg = "I love Paris";
     }); 
-});
     </script>
     
     </body>
