@@ -30,14 +30,12 @@
     <script> // database
     
     </script>
-    <script> // routing features
-var jq = $.noConflict();
-jq(document).ready(function(){ 
+    <script> // routing features 
     var app = angular.module("myApp", ["ngRoute"]);
     app.config(function($routeProvider,$locationProvider) {
       $routeProvider
         .when("/london", {
-            templateUrl : "london.html",
+            templateUrl : "jacobstits.html",
             controller : "londonCtrl"
         })
         .when("/paris", {
@@ -56,6 +54,10 @@ jq(document).ready(function(){
     app.controller("parisCtrl", function ($scope) {
         $scope.msg = "I love Paris";
     }); 
+
+    var jq = $.noConflict();
+jq(document).ready(function(){
+    
 });
     </script>
     
