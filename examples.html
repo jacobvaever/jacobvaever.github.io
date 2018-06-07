@@ -8,7 +8,7 @@
 
 <body>
 <script>
-$(document).ready(function(){
+$(function(){
 
     // Initialize Firebase
     var config = {
@@ -58,9 +58,11 @@ dbRefList.on('child_removed',function(snap){
 });
 
 
+
 // trying it all on the real data
 
 const dbRefproj = firebase.database().ref().child('projekter');
+
 
 dbRefproj.on('value', function(snapshot) {
     var numProjcet = snapshot.numChildren();
@@ -70,16 +72,11 @@ dbRefproj.on('value', function(snapshot) {
 dbRefproj.on('child_added',function(snap){
     $("#list2").append('<li id="'+snap.key+'">'+snap.key+'</li>');
 });
-// var app = angular.module('myApp',[]);
-// app.controller('ctrl',function($scope){
-    
-
-// });
 
 
 });
 
-
+});
 </script>
 
 <pre id="object" style="font-size: 22px"></pre>

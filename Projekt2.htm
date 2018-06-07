@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>Projekt2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- dynamic database Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
+          authDomain: "myplaner-0504.firebaseapp.com",
+          databaseURL: "https://myplaner-0504.firebaseio.com",
+          projectId: "myplaner-0504",
+          storageBucket: "myplaner-0504.appspot.com",
+          messagingSenderId: "219717761"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
 <body>
+<script>
+  //IIFE
+(function(){
+let name = prompt("What is your name?");
+alert(name)
+})();
 
-<!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:19%">
-  <ol>
-  <h3 href="egenPlan.html" class="w3-bar-item">Projektoversigt</h3>
-  <a href="egenPlan.html" class="w3-bar-item">Oversigt</a>
-  <a href="Projekt1.htm" class="w3-bar-item w3-button">Projekt 1</a>
-  <a href="Projekt2.htm" class="w3-bar-item w3-button">Projekt 2</a>
-  <a href="Projekt3.htm" class="w3-bar-item w3-button">Projekt 3</a>
-  </ol>
-</div>
-
-<!-- Page Content -->
-<div style="margin-left:19%">
-
-  <div class="w3-container 3" style="font-family:courier; background-color:#ff6000db">
-    <h1 style="font-family:Courier New;"> Projekt 2</h1>
-  </div>
-
-
-  <div class="w3-container">
-    <h2>Estimeret tid</h2>
-    <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
-  </div>
-
-  <div class="w3-container">
-    <h2>Virkelig tid</h2>
-    <p>Her ses hvor lang tid opgaverne har taget</p>
-  </div>
-  
-  <div class="w3-container">
-    <h2>Forslag til ændring</h2>
-    <p>Her ses forslag til ændring..</p>
-  </div>
-
-</div>
-
-</div>
-      
+</script>
+<p id="test"></p>
 </body>
 </html>
 
