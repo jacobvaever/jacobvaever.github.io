@@ -28,7 +28,7 @@
 
     (function($){
         var app = $.sammy('#app',function(){
-            // this.use('Mustache','ms');
+            this.use('Mustache');
 
             this.get('#/',function(){
                 this.log("Page load success!");
@@ -37,10 +37,28 @@
             });
             this.get('#/:id',function(){
                 // Variables 
-                // var project = this.params.id;
-                // const dbRefCurrentProj = dbRefproj.child(project);
-                // alert(dbRefCurrentProj);
-                this.partial('projectTemp.html');
+                var project = this.params.id;
+                var numJobs = null;
+                var subNames = null;
+                var subTimes = null;
+                
+                const dbRefCurrentProj = dbRefproj.child(project);
+                this.title = project;
+                dbRefCurrentProj.on('value',function(snap){
+                    numJobs = snap.child('subNames').numChildren();
+                    subNames = snap.child('subNames').val();
+                    subTimes = snap.child('subTimes').val();
+
+
+
+                return numJobs,subNames,subTimes;
+                });
+                this.jobNames = subNames;
+                this.jobTimes = subTimes;
+                
+                
+
+                this.partial('projectTemp.mustache');
             });
         });
 
