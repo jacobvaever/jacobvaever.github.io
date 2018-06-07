@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* Full-width input fields */
+    input[type=text], input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: auto%;
+    }
+    
+    button:hover {
+        opacity: 0.8;
+    }
+    
+    /* Extra styles for the cancel button */
+    
+    /* Set a style for all buttons */
+    .savebtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #25bb2d;
+    }
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+    
+    
+    .container {
+        padding: 16px;
+    }
+    
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+        
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+           display: block;
+           float: none;
+        }
+        .cancelbtn {
+           width: 100%;
+        }
+    }
+    </style>
+
+
+<head>
+    <title>Projekt1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+    <!-- To hide/show input -->
+    <script>
+      $(document).ready(function(){
+          $("button").click(function(){
+              $(in1).toggle();
+          });
+      });
+      </script>
+
+    <script>
+      $(document).ready(function(){
+          $("button2").click(function(){
+              $(in2).toggle();
+          });
+      });
+      </script>
+
+      <script>
+        $(document).ready(function(){
+            $("button3").click(function(){
+                $(in3).toggle();
+            });
+        });
+        </script>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:19%">
+  <ol>
+    <h3 href="egenPlan.html" class="w3-bar-item">Projektoversigt</h3>
+    <a href="egenPlan.html" class="w3-bar-item">Oversigt</a>
+    <a href="Projekt1.htm" class="w3-bar-item w3-button">Projekt 1</a>
+    <a href="Projekt2.htm" class="w3-bar-item w3-button">Projekt 2</a>
+    <a href="Projekt3.htm" class="w3-bar-item w3-button">Projekt 3</a>
+  </ol>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:19%">
+
+  <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
+    <h1 style="font-family:Courier New;"> Projekt 1</h1>
+  </div>
+
+  <!-- Estimeret tid -->
+  <div class="w3-container">
+    <h2>Estimeret tid</h2>
+    <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
+  </div>
+
+  <div class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+    <div class="progress">
+    <div id="køkken1" class="progress-bar progress-bar" role="progressbar" style="width:30% ">
+      Køkken
+    </div>
+    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%">
+      Bad
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+      Terasse
+    </div>
+      
+    </div>
+  </div>
+
+
+  <!-- Virkelig tid -->
+  <div ng-app="" class="w3-container" style="width:80%; position: absolute; left: 19%; top:22%">
+    <h2>Virkelig tid</h2>
+    <p>Her ses hvor lang tid opgaverne har taget</p>  
+    <p>Delopgavens varighed</p> 
+
+
+    <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-primary">Køkken</button>
+
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Delprojekts varighed</b></label>
+      
+          <input type="text"  ng-model="id01" placeholder="Antal timer" name="uname" required>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button  type="button" onclick="document.getElementById('id01').style.display='none'" type="submit" class="savebtn">Gem</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Luk</button>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+
+
+<button onclick="document.getElementById('id02').style.display='block'" type="button" class="btn btn-primary">Bad</button>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Delprojekts varighed</b></label>
+  
+      <input type="text"  ng-model="id02" placeholder="Antal timer" name="uname" required>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button  type="button" onclick="document.getElementById('id02').style.display='none'" type="submit" class="savebtn">Gem</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Luk</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<p></p>
+
+    <div class="progress" >
+      <div class="progress-bar progress-bar2" role="progressbar" style="width:{{id01}}% ">  <!--  tid1 ved if! -->
+        Køkken
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{id02}}%">
+        Bad
+      </div>
+    </div>
+
+  </div>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(q1) {
+    var tid1;
+    if (q1) {
+      tid1 = q1;
+    } else {
+      tid1 = 30;
+    }
+}
+</script>
+
+
+
+</head>
+<body>
+
+
+
+
+  
+   </div>
+
+   
+
+  <!-- Forslag ændring -->
+  <div class="w3-container" style="position: absolute; left: 19%; top:64%">
+    <h2>Forslag til ændring</h2>
+    <p>Her ses forslag til ændring..</p>
+  </div>
+
+  <div class="w3-container" style="width:80%; position: absolute;
+  left: 19%; top:74%"> 
+  <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p> 
+     <div class="progress">
+     <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:10% ">
+       Køkken
+     </div>
+     <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+       Bad
+     </div>
+     <div class="progress-bar progress-bar-danger" role="progressbar" style="width:30%">
+       Terasse
+     </div>
+   </div>
+   <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p>
+ </div> 
+
+
+ 
+
+</div>
+
+
+      
+</body>
+</html>
+
+
