@@ -1,5 +1,135 @@
 <!DOCTYPE html>
 <html>
+
+
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* Full-width input fields */
+    input[type=text], input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: auto%;
+    }
+    
+    button:hover {
+        opacity: 0.8;
+    }
+    
+    /* Extra styles for the cancel button */
+    
+    /* Set a style for all buttons */
+    .savebtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #25bb2d;
+    }
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+    
+    
+    .container {
+        padding: 16px;
+    }
+    
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+        
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+           display: block;
+           float: none;
+        }
+        .cancelbtn {
+           width: 100%;
+        }
+    }
+    </style>
+
+
 <head>
     <title>Projekt1</title>
     <meta charset="utf-8">
@@ -81,34 +211,87 @@
   <div ng-app="" class="w3-container" style="width:80%; position: absolute; left: 19%; top:22%">
     <h2>Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
-    <p>Indtast antallet timer delopgaven tog</p> 
+    <p>Delopgavens varighed</p> 
 
+
+    <button onclick="document.getElementById('id01').style.display='block'" type="button" class="btn btn-primary">Køkken</button>
+
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
     
-    <p >  </p>
-    <button type="button" class="btn btn-primary">Køkken</button>
-    <input id="in1" type="number" ng-model="q1">
-    <button id="in1" type="button" class="btn btn-primary">FÆRDIG</button>
+        <div class="container">
+          <label for="uname"><b>Delprojekts varighed</b></label>
+      
+          <input type="text"  ng-model="id01" placeholder="Antal timer" name="uname" required>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button  type="button" onclick="document.getElementById('id01').style.display='none'" type="submit" class="savebtn">Gem</button>
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Luk</button>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
 
-    <p >  </p>
-    <button2 type="button2" class="btn btn-primary">Bad</button2>
-    <input id="in2" type="number" ng-model="q2">
-    <button2 id="in2" type="button2" class="btn btn-primary">FÆRDIG</button2>
 
-    <p >  </p>
-    <button3 type="button3" class="btn btn-primary">Terasse</button3>
-    <input id ="in3" type="number" ng-model="q3">
-    <button3 id="in3" type="button3" class="btn btn-primary">FÆRDIG</button3>
 
+<button onclick="document.getElementById('id02').style.display='block'" type="button" class="btn btn-primary">Bad</button>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Delprojekts varighed</b></label>
+  
+      <input type="text"  ng-model="id02" placeholder="Antal timer" name="uname" required>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button  type="button" onclick="document.getElementById('id02').style.display='none'" type="submit" class="savebtn">Gem</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Luk</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<p></p>
 
     <div class="progress" >
-      <div class="progress-bar progress-bar2" role="progressbar" style="width:{{q1}}% ">  <!--  tid1 ved if! -->
+      <div class="progress-bar progress-bar2" role="progressbar" style="width:{{id01}}% ">  <!--  tid1 ved if! -->
         Køkken
       </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{q2}}%">
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{id02}}%">
         Bad
-      </div>
-      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{q3}}%">
-        Terasse
       </div>
     </div>
 

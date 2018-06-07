@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     
     <!-- To hide/show input -->
     <script>
@@ -40,6 +41,10 @@
 
 
 <body>
+
+        <p>Name: <input type="text" id="test" value=""></p>
+        <button>Show Value</button>
+        
         <div class="w3-container" style="position: absolute; left: 5%; top:5%">
         <h1>Math-part of projekt</h1>
 
@@ -72,7 +77,9 @@
         <p id="ProAnbefalet3"></p>
         </div>
 
+        
 
+        
 
 
 
@@ -93,7 +100,7 @@
       left: 5%; top:95%"> 
       <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p> 
          <div class="progress">
-         <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:{ProAnbefalet1}% ">
+         <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:{alert(prox[0])}% ">
            Køkken
          </div>
          <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
@@ -267,7 +274,9 @@
             document.getElementById('ProAnbefalet1').innerHTML = prox[0]; 
             document.getElementById('ProAnbefalet2').innerHTML = prox[1]; 
             document.getElementById('ProAnbefalet3').innerHTML = prox[2]; 
+
             
+           
             
             </script>
             
