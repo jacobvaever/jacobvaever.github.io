@@ -15,18 +15,32 @@
     // Define database reference 
     const dbRefproj = firebase.database().ref().child('projekter');
 
+    
+
     // Make sidebar
     dbRefproj.on('child_added',function(snap){
-    $("#sidebar").append('<a id="'+snap.key+'" href="#/'+snap.key+
-        '" class="w3-bar-item w3-button">'+snap.key+'</a>');
+        $("#sidebar").append('<a id="'+snap.key+'" href="#/'+snap.key+
+            '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
     });
+
+
+
 
     (function($){
         var app = $.sammy('#app',function(){
+            // this.use('Mustache','ms');
 
-            this.get('#/',function(context){
-                context.log("Page load success!");
-                this.partial('oversigt.html')
+            this.get('#/',function(){
+                this.log("Page load success!");
+                this.partial('oversigt.html');
+                
+            });
+            this.get('#/:id',function(){
+                // Variables 
+                // var project = this.params.id;
+                // const dbRefCurrentProj = dbRefproj.child(project);
+                // alert(dbRefCurrentProj);
+                this.partial('projectTemp.html');
             });
         });
 
