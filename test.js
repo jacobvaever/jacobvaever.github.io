@@ -2,6 +2,7 @@
 // <!-- dynamic database Firebase  -->
 {/* <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script> */}
 
+(function(){
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
@@ -13,18 +14,15 @@
     };
     firebase.initializeApp(config);
 
-function databar(){
-    var obj = { "name":"John", "today":"new Date()", "city":"New York"};
-    var myJSON = JSON.stringify(obj);
-    var user = 'userdb'
-    var database = firebase.database();
-    database.ref('data/'+user).set(obj)
-        .then(function(snapshot) {
-            //success(); // some success method
-        }, function(error) {
-            console.log('error' + error);
-            //error(); // some error method
-        });
-        alert(new Date())
-}; 
+// document reference
+const preObj = document.getElementById('object');
+
+// database reference
+const dbRefObj = firebase.database().ref().child('object');
+
+// sync object changes
+dbRefObj.on('value', function(snapshot) {
+    preObj.innerHTML = JSON.stringify(snapshot.val(),null,3);
+});
+}());
 

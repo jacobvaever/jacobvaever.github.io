@@ -8,9 +8,7 @@
 
     </head>
 <script>
-  var jq = $.noConflict();
-
-  jq(document).ready(function(){
+  $(document).ready(function(){
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
@@ -22,9 +20,9 @@
     };
     firebase.initializeApp(config);
 
-    jq("#addproj").click(function(){ // adds a new line of parameter 
-      var rows = jq('table >tbody >tr').length;
-      jq("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
+    $("#addproj").click(function(){ // adds a new line of parameter 
+      var rows = $('table >tbody >tr').length;
+      $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
         '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
         '" type="text" class="form-control" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
         '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
@@ -32,16 +30,16 @@
         ' placeholder="Timer det tag"/></span></th></tr>');
     });
 
-    jq("#save").click(function(){ // saves the project in the database under its name
-      var rows = jq('table >tbody >tr').length;
-      var temp = jq('#name').val();
+    $("#save").click(function(){ // saves the project in the database under its name
+      var rows = $('table >tbody >tr').length;
+      var temp = $('#name').val();
       
       if(temp != [] ){  
         var subNames = [],subTimes = [];
         for (i = 0; i < rows; i++){
-          subNames[i] = jq("#subname"+i).val();
-          subTimes[i] = jq("#subtime"+i).val();
-          if((jq("#subtime"+(i+1)).val() && jq("#subname"+(i+1)).val()) == ""){
+          subNames[i] = $("#subname"+i).val();
+          subTimes[i] = $("#subtime"+i).val();
+          if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
             break;
           }
         }
