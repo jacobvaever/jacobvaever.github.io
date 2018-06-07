@@ -1,14 +1,44 @@
+$(document).ready(function(){
+
+
+
+
+})
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <body>
 
 <h1>Math-part of projekt</h1>
-<p id="demo"></p>
-<p id="newdemo"></p>
-<p id="new2demo"></p>
-<p id="new3demo"></p>
-<p id="new4demo"></p>
-<p id="new5demo"></p>
+
+<h2> Anbefalet (timer):</h2>
+<p id="Anbefalet"></p>
+
+<h2>Sum af anbefalet progress bar:</h2>
+<p id="SumAnbefalet"></p>
+
+<h2>Anbefalet tid omregnet til procenter til progress bar:</h2>
+<p id="ProAnbefalet"></p>
+
+<h2>Anbefalet tid omregnet til procenter til progress bar:</h2>
+<p id="ProAnbefalet1"></p>
+
+<h2>Anbefalet skill Level:</h2>
+<p id="LevelAnbefalet"></p>
+
+<h2>Virkelig tid (bruges til beregning af virkelig sum):</h2>
+<p id="Real"></p>
+
+<h2>Sum af den virkelige progress bar:</h2>
+<p id="SumReal"></p>
+
 
 <script>
 function NewPlan(est, aet){
@@ -138,30 +168,33 @@ var level = ['', '','', '',''];
 
 //Test of function NewPlan()
 var x = NewPlan(est, aet); 
-document.getElementById("demo").innerHTML = x; 
+document.getElementById("Anbefalet").innerHTML = x; 
+
 
 //Test of function realBar()
 var realbarX = realBar(est, aet1);
-document.getElementById("new4demo").innerHTML = realbarX;
+document.getElementById('Real').innerHTML = realbarX;
+
 
 //Test of function sums()
 var sumx = sums(x);
-document.getElementById("newdemo").innerHTML = sumx; 
+document.getElementById('SumAnbefalet').innerHTML = sumx; 
 var sumxreal = sums(realbarX);
-document.getElementById("new5demo").innerHTML = sumxreal; 
+document.getElementById('SumReal').innerHTML = sumxreal; 
 
 
 // Test of function workLevel()
 var wL = workLevel(est,aet2, x, level); 
-document.getElementById("new3demo").innerHTML = wL;
+document.getElementById('LevelAnbefalet').innerHTML = wL;
 
 // Test of function toProcent
 var prox = toProcent(x);
-document.getElementById("new2demo").innerHTML = prox; 
+document.getElementById('ProAnbefalet').innerHTML = prox; 
+
+
+document.getElementById('ProAnbefalet1').innerHTML = prox[0]; 
 
 
 </script>
-
-
 </body>
 </html>
