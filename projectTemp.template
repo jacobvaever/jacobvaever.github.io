@@ -3,18 +3,12 @@
 (function(){
 
 })();
-/*$(function(){
-  for(x in {{jobNames}}){
-    var est = 
-    $("#est-bar").append('<div id="est-subbar'+x+'" class="progress-bar progress-bar"'+
-      ' role="progressbar" style="width:'+{{jobTimes}}[x]+'%">'+{{jobNames}}[x]+'</div>');
-  }
-  
-});*/
+
+
 </script>
 
 <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
-  <h1 style="font-family:Courier New;">{{title}}</h1>
+  <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
 
 
@@ -26,15 +20,15 @@
 
   <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
     <div id="est-bar" class="progress">
-          <div class="progress-bar progress-bar2" role="progressbar" style="width:{{}}%">  
-        Køkken
+      <div class="progress-bar progress-bar2" role="progressbar" style="width:10%">  
+       
       </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:0%">
-        Bad
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+       
       </div>
-    </div>
     </div>
   </div>
+
 
 
   <!-- Virkelig tid -->

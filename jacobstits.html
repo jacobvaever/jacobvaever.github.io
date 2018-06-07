@@ -1,121 +1,103 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Nyt Projekt</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 
-    </head>
 <script>
-  $(document).ready(function(){
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBXClgn7mQSFFFyy4xtDTjVf18ht2SSkLc",
-      authDomain: "myplaner-0504.firebaseapp.com",
-      databaseURL: "https://myplaner-0504.firebaseio.com",
-      projectId: "myplaner-0504",
-      storageBucket: "myplaner-0504.appspot.com",
-      messagingSenderId: "219717761"
-    };
-    firebase.initializeApp(config);
-
-    $("#addproj").click(function(){ // adds a new line of parameter 
-      var rows = $('table >tbody >tr').length;
-      $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
-        '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
-        '" type="text" class="form-control" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
-        '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
-        '</i></span><input id="subtime'+rows+'" type="number" class="form-control"'+
-        ' placeholder="Timer det tag"/></span></th></tr>');
-    });
-
-    $("#save").click(function(){ // saves the project in the database under its name
-      var rows = $('table >tbody >tr').length;
-      var temp = $('#name').val();
-      
-      if(temp != [] ){  
-        var subNames = [],subTimes = [];
-        for (i = 0; i < rows; i++){
-          subNames[i] = $("#subname"+i).val();
-          subTimes[i] = $("#subtime"+i).val();
-          if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
-            break;
-          }
-        }
-        data = {
-                subNames,
-                subTimes
-              };
-
-        firebase.database().ref('projekter/' + temp).set(data,function(error){
-          if(error) {
-            console.log('write to database failed!');
-          } else {
-            console.log('data saved successfully!');
-          };
-        });
-      }else{alert('Du skal som minimum udfylde Projektnavn')};
-                  
-    });
-    
-});
-</script>
-<body>
-  <div class="container" >
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="input-group">
-            <span class="input-group-addon">Projektnavn</span>
-            <input type="text" id="name" class="form-control"/>
-          </th>
-          <th>
-            <button id="addproj" class="btn" >Tilføj Delopgave</button>
-          </th>
-        </tr> 
-      </thead>
-      <tbody>
-        <tr>
-          <th class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <input id="subname0" type="text" class="form-control"  placeholder="Navn på Delopgave"/>
-          </th>
-          <th>
-            <span class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-              <input id="subtime0" type="number" class="form-control"  placeholder="Timer det tag"/>
-            </span>
-          </th>
-        </tr>
-      </tbody>  
-    </table>
-    <button class="btn btn-info" id="save">Gem Projekt</button>
-  </div>
-</div>
-
-  <!-- <div ng-app="hej"> 
-    <input type="number" ng-model="q1">
-    <input type="number" ng-model="q2">
-    <input type="number" ng-model="q3">
+  (function(){
   
-      <div class="progress">
-      <div id="køkken" class="progress-bar progress-bar" role="progressbar" style="width:{{90*q1/(q1+q2+q3)}}%">
-        Køkken
-      </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:{{90*q2/(q1+q2+q3)}}%">
-        Warning
-      </div>
-      <div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{90*q3/(q1+q2+q3)}}%">
-        Danger
-      </div>
-      <div class="progress-bar progress-bar-info" role="progressbar" style="width:10%">
-          buffer
+  })();
+  
+  
+  </script>
+  
+  <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
+    <h1 style="font-family:Courier New;"></h1>
+  </div>
+  
+  
+    <!-- Estimeret tid -->
+    <div class="w3-container">
+      <h2>Estimeret tid</h2>
+      <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
+    </div >
+  
+    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+      <div id="est-bar" class="progress">
+        <div class="progress-bar progress-bar2" role="progressbar" style="width:10%">  
+         
         </div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+         
+        </div>
+      </div>
     </div>
-  </div> -->
-
-
-
-</body>
-</html>
+  
+  
+  
+    <!-- Virkelig tid -->
+    <div  class="w3-container" style="width:80%; position: absolute; left: 19%; top:22%">
+      <h2>Virkelig tid</h2>
+      <p>Her ses hvor lang tid opgaverne har taget</p>  
+      <p>Delopgavens varighed</p> 
+  
+      <div class="progress" >
+        <div class="progress-bar progress-bar2" role="progressbar" style="width:0%">  
+          Køkken
+        </div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" style="width:0%">
+          Bad
+        </div>
+      </div>
+      <div class="container">
+          <h2>Modal Example</h2>
+          <!-- Trigger the modal with a button -->
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+    </div>   
+  
+    <!-- Forslag ændring -->
+    <div class="w3-container" style="position: absolute; left: 19%; top:64%">
+      <h2>Forslag til ændring</h2>
+      <p>Her ses forslag til ændring..</p>
+    </div>
+  
+    <div class="w3-container" style="width:80%; position: absolute;
+    left: 19%; top:74%"> 
+    <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p> 
+       <div class="progress">
+       <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:10% ">
+         Køkken
+       </div>
+       <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
+         Bad
+       </div>
+       <div class="progress-bar progress-bar-danger" role="progressbar" style="width:30%">
+         Terasse
+       </div>
+     </div>
+     <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p>
+   </div> 
+  </div>
+  
+  
+  
+  

@@ -18,47 +18,40 @@
     
 
     // Make sidebar
+
     dbRefproj.on('child_added',function(snap){
         $("#sidebar").append('<a id="'+snap.key+'" href="#/'+snap.key+
             '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
     });
+   
 
 
 
 
     (function($){
         var app = $.sammy('#app',function(){
-            this.use('Mustache');
+            this.use('Template');
 
             this.get('#/',function(){
                 this.log("Page load success!");
                 this.partial('oversigt.html');
                 
             });
-            this.get('#/:id',function(){
+            this.get('#/:id',function(context){
                 // Variables 
-                var project = this.params.id;
-                var numJobs = null;
-                var subNames = null;
-                var subTimes = null;
-                
+                var project = context.params.id;                
                 const dbRefCurrentProj = dbRefproj.child(project);
                 this.title = project;
+
                 dbRefCurrentProj.on('value',function(snap){
-                    numJobs = snap.child('subNames').numChildren();
-                    subNames = snap.child('subNames').val();
-                    subTimes = snap.child('subTimes').val();
-
-
-
-                return numJobs,subNames,subTimes;
+                    var subNames = snap.child('subNames').val();
+                    var subTimes = snap.child('subTimes').val();
+                
+                alert(subNames);
                 });
-                this.jobNames = subNames;
-                this.jobTimes = subTimes;
-                
                 
 
-                this.partial('projectTemp.mustache');
+                this.partial('projectTemp.template');
             });
         });
 
