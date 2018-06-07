@@ -202,9 +202,9 @@
               
                 if (diff == 0 && aet1[i]==0){
                   level[i] = 'Middel'; 
-                } else if (diff < 0 && aet1[i]==0 ){
+                } else if (diff > 0 && aet1[i]==0 ){
                   level[i] = 'God';
-                } else if (diff > 0 && aet1[i]==0){
+                } else if (diff < 0 && aet1[i]==0){
                   level[i] = 'Nybegynder';
                 }
               }
@@ -233,7 +233,7 @@
             
             // Estimated time and realtime to test the different functions
             var est = [5, 10, 15, 17, 22];
-            var aet = [6, 7, 15, 0, 0]; 
+            var aet = [6, 7, 0, 0, 0]; 
             var aet1 = [6, 7, 0, 0, 0]; 
             var aet2 = [6, 7, 0, 0, 0]; 
             var level = ['', '','', '','']; 
