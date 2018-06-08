@@ -40,27 +40,21 @@
                 // Variables 
                 var project = context.params.id;                
                 const dbRefCurrentProj = dbRefproj.child(project);
-                this.title = project;
+                context.title = project;
 
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
                     
-                    context.names = subNames;
-                    context.times = subTimes;
-                    context.test = subTimes[0];
-                    context.navn = subNames[0];
-                    
-                    // return context;
+                    context.jobNames = subNames;
+                    context.jobTimes = subTimes;
                 });
-                // context.log(context);
                 
-
                 this.partial('projectTemp.template');
             });
 
             this.before({except: {path: '#/'}},function(){
-                // fortsættes ... 
+                
 
 
 

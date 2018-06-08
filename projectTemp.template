@@ -12,12 +12,11 @@
 
   <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
     <div id="est-bar" class="progress">
-      <div class="progress-bar progress-bar2" role="progressbar" style="width:<%=test %>%">  
-       <%=navn %>
-      </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
-       
-      </div>
+      <% var x; for( x in jobNames){%> 
+        <div class="progress-bar progress-bar2" role="progressbar" style="width:20%">  
+          <%= title %>
+        </div>
+      <% } %>
     </div>
   </div>
 
@@ -91,10 +90,8 @@
 </div>
 <script>
 (function(){
-alert('hej')
+
 })();
-
-
 </script>
 
 
