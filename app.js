@@ -18,7 +18,6 @@
     
 
     // Make sidebar
-
     dbRefproj.on('child_added',function(snap){
         $("#sidebar").append('<a id="'+snap.key+'" href="#/'+snap.key+
             '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
@@ -46,13 +45,27 @@
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
-                
-                alert(subNames);
+                    
+                    context.names = subNames;
+                    context.times = subTimes;
+                    context.test = subTimes[0];
+                    context.navn = subNames[0];
+                    
+                    // return context;
                 });
+                // context.log(context);
                 
 
                 this.partial('projectTemp.template');
             });
+
+            this.before({except: {path: '#/'}},function(){
+                // fortsættes ... 
+
+
+
+            });
+
         });
 
         $(function(){

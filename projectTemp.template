@@ -1,12 +1,4 @@
 
-<script>
-(function(){
-
-})();
-
-
-</script>
-
 <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
   <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
@@ -20,8 +12,8 @@
 
   <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
     <div id="est-bar" class="progress">
-      <div class="progress-bar progress-bar2" role="progressbar" style="width:10%">  
-       
+      <div class="progress-bar progress-bar2" role="progressbar" style="width:<%=test %>%">  
+       <%=navn %>
       </div>
       <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
        
@@ -97,6 +89,13 @@
    <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p>
  </div> 
 </div>
+<script>
+(function(){
+alert('hej')
+})();
+
+
+</script>
 
 
 
