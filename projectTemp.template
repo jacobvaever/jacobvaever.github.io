@@ -6,14 +6,58 @@
 
 </script>
 
+ <!-- KNAPPER -->
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        //'use strict';
+        let name1 = prompt("Angiv tiden delopgaven tog", "");
+        //alert(name);
+        $("#namet1").attr("style", "width" + name1 + "%" );
+        $("button").hide();
+      });
+    });
+  </script>  
+
+  <script>
+    var example;
+  </script>
+  
+  <script>
+    $(document).ready(function(){
+        $("button2").click(function(){
+          //'use strict';
+          let name = prompt("Angiv tiden delopgaven tog", "");
+          //$("#namet").attr("style", "width" + name + "%" );
+          //jQuery(element).data(key,name);
+          //alert(name);
+          //$("#w3s").attr("style", "width" + name);//"style", "width" + name + "%"
+          //$("#w3s").val(name) 
+          //$("button2").hide();
+          //$("#test").val()= prompt("Angiv tiden delopgaven tog", "");
+          example=name;
+        });
+      });
+  </script>
+
+
+  <script>
+    $(document).ready(function(){
+      $("button3").click(function(){
+        document.getElementById("name2").innerHTML=prompt('Angiv tiden delopgaven tog')
+          $(in3).toggle();
+      });
+    });
+  </script>
+
 <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
   <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
 
 
-  <!-- Estimeret tid temp -->
+  <!-- Estimeret tid -->
   <div class="w3-container">
-    <h2>Estimeret tid temp</h2>
+    <h2>Estimeret tid </h2>
     <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
   </div >
 
@@ -34,7 +78,12 @@
   <div  class="w3-container" >
     <h2>Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
-    <p>Delopgavens varighed</p> 
+    <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
+       <p >  </p>
+      <!-- Knapper - egentlig kun 1 -->
+      <button type="button" class="btn btn-primary">Køkken færdigt</button>
+      <button2 type="button2" class="btn btn-primary">Bad færdigt</button2>
+      <button3 type="button3" class="btn btn-primary">Terasse færdig</button3>
 
     <div class="progress" >
       <div class="progress-bar progress-bar2" role="progressbar" style="width:0%">  
@@ -72,6 +121,10 @@
         
       </div>
   </div>   
+
+
+
+
 
   <!-- Forslag ændring -->
   <div class="w3-container" >
