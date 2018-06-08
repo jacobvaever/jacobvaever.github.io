@@ -1,58 +1,4 @@
 
-<<<<<<< HEAD
-<script>
-(function(){
-
-})();
-
-</script>
-
- <!-- KNAPPER -->
-  <script>
-    $(document).ready(function(){
-      $("button").click(function(){
-        //'use strict';
-        let name1 = prompt("Angiv tiden delopgaven tog", "");
-        //alert(name);
-        $("#namet1").attr("style", "width" + name1 + "%" );
-        $("button").hide();
-      });
-    });
-  </script>  
-
-  <script>
-    var example;
-  </script>
-  
-  <script>
-    $(document).ready(function(){
-        $("button2").click(function(){
-          //'use strict';
-          let name = prompt("Angiv tiden delopgaven tog", "");
-          //$("#namet").attr("style", "width" + name + "%" );
-          //jQuery(element).data(key,name);
-          //alert(name);
-          //$("#w3s").attr("style", "width" + name);//"style", "width" + name + "%"
-          //$("#w3s").val(name) 
-          //$("button2").hide();
-          //$("#test").val()= prompt("Angiv tiden delopgaven tog", "");
-          example=name;
-        });
-      });
-  </script>
-
-
-  <script>
-    $(document).ready(function(){
-      $("button3").click(function(){
-        document.getElementById("name2").innerHTML=prompt('Angiv tiden delopgaven tog')
-          $(in3).toggle();
-      });
-    });
-  </script>
-
-=======
->>>>>>> f3b797ec741d871fe49176e893e66f8114b06053
 <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
   <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
@@ -67,8 +13,8 @@
     <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
       <div id="est-bar" class="progress">
         <% var x; for( x in jobNames){%> 
-          <div class="progress-bar progress-bar2" role="progressbar" style="width:<%= jobTimes[x] %>%">  
-            <%= jobNames[x] %><br> {<%= jobTimes[x] %>}
+          <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
+            <%= jobNames[x] %> {<%= jobTimes[x] %>}
           </div>
         <% } %>
       </div>
@@ -82,11 +28,6 @@
     <h2>Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
     <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
-       <p >  </p>
-      <!-- Knapper - egentlig kun 1 -->
-      <button type="button" class="btn btn-primary">Køkken færdigt</button>
-      <button2 type="button2" class="btn btn-primary">Bad færdigt</button2>
-      <button3 type="button3" class="btn btn-primary">Terasse færdig</button3>
 
     <div class="progress" >
       <div class="progress-bar progress-bar2" role="progressbar" style="width:0%">  
@@ -152,7 +93,7 @@
 </div>
 <script>
 (function(){
-alert('<%=dbRef%>');
+
 })();
 </script>
 

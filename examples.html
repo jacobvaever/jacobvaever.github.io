@@ -72,13 +72,16 @@ dbRefproj.on('value', function(snapshot) {
 dbRefproj.on('child_added',function(snap){
     $("#list2").append('<li id="'+snap.key+'">'+snap.key+'</li>');
 });
-(function(){
-dbRefproj.child('Dutt/irlTimes/0').update(12);
-})();
+$(function(){
+    $("#knap").click(function(){
+        var x = 12;
+        updates
+    });
+});
 });
 
 </script>
-
+<button id="knap">Tryk mig!</button>
 <pre id="object" style="font-size: 22px"></pre>
 
 <div>

@@ -15,7 +15,12 @@
     <script src="app.js"></script>
     <!-- <script src="style.css"></script> -->
     <script type="text/javascript">
-  
+    var x = [1,2,3,4,5,6,7,8,9,10];
+    var n = [];
+    for (const key in x) {
+      n[key] = x[key]%4;
+    }
+      alert(n);
     </script>
   </head>
   
@@ -33,7 +38,7 @@
     <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
       <div id="est-bar" class="progress">
         <div class="progress-bar progress-bar2" role="progressbar" style="width:10%">  
-         
+         {}
         </div>
         <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
          
