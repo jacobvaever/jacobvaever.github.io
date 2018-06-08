@@ -4,12 +4,17 @@
 </div>
 
 
-  <!-- Estimeret tid temp -->
+  <!-- Estimeret tid -->
   <div class="w3-container">
+<<<<<<< HEAD
     <h3>Estimeret tid temp</h3>
+=======
+    <h2>Estimeret tid </h2>
+>>>>>>> 679b7e3cea9f389b2d615809ea081e4195af88c4
     <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
-  </div >
+  
 
+<<<<<<< HEAD
   <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
     <div id="est-bar" class="progress">
       <div class="progress-bar progress-bar2" role="progressbar" style="width:<%=test %>%">  
@@ -17,12 +22,22 @@
       </div>
       <div class="progress-bar progress-bar-warning" role="progressbar" style="width:<%=test %>%">
        
+=======
+    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+      <div id="est-bar" class="progress">
+        <% var x; for( x in jobNames){%> 
+          <div class="progress-bar progress-bar2" role="progressbar" style="width:<%= jobTimes[x] %>%">  
+            <%= jobNames[x] %><br> {<%= jobTimes[x] %>}
+          </div>
+        <% } %>
+>>>>>>> 679b7e3cea9f389b2d615809ea081e4195af88c4
       </div>
     </div>
-  </div>
+  </div >
 
 <p></p>
 
+<<<<<<< HEAD
 <!-- Virkelig tid -->
     <div  class="w3-container" style="width:80%; position: absolute; left: 19%; top:22%">
       <h2>Virkelig tid</h2>
@@ -46,6 +61,48 @@
                   <button type="button" class="btn btn-success" data-dismiss="modal">Gem</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Luk</button>
                 </div>
+=======
+
+  <!-- Virkelig tid -->
+  <div  class="w3-container" >
+    <h2>Virkelig tid</h2>
+    <p>Her ses hvor lang tid opgaverne har taget</p>  
+    <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
+       <p >  </p>
+      <!-- Knapper - egentlig kun 1 -->
+      <button type="button" class="btn btn-primary">Køkken færdigt</button>
+      <button2 type="button2" class="btn btn-primary">Bad færdigt</button2>
+      <button3 type="button3" class="btn btn-primary">Terasse færdig</button3>
+
+    <div class="progress" >
+      <div class="progress-bar progress-bar2" role="progressbar" style="width:0%">  
+        Køkken
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:0%">
+        Bad
+      </div>
+    </div>
+    <div class="container">
+        <h2>Modal Example</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+      
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the modal.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+>>>>>>> 679b7e3cea9f389b2d615809ea081e4195af88c4
               </div>
               
             </div>
@@ -67,14 +124,17 @@
 
 
 
+
+
+
+
   <!-- Forslag ændring -->
   <div class="w3-container" >
     <h3>Forslag til ændring</h3>
     <p>Her ses forslag til ændring..</p>
   </div>
 
-  <div class="w3-container" style="width:80%; position: absolute;
-  left: 19%; top:74%"> 
+  <div class="w3-container" > 
   <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p> 
      <div class="progress">
      <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:10% ">
@@ -87,14 +147,15 @@
        Terasse
      </div>
    </div>
-   <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p>
  </div> 
 </div>
 <script>
 (function(){
+<<<<<<< HEAD
+=======
+alert('<%=dbRef%>');
+>>>>>>> 679b7e3cea9f389b2d615809ea081e4195af88c4
 })();
-
-
 </script>
 
 

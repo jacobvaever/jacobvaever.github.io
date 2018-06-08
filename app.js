@@ -23,6 +23,11 @@
             '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
     });
    
+    // make contents for gant 
+    //dbRefproj.on('child_added',function(snap){
+      //  $("#gant").append('<a id="'+snap.key+
+        //    '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
+    //});
 
 
 
@@ -38,29 +43,26 @@
             });
             this.get('#/:id',function(context){
                 // Variables 
+                var x;
                 var project = context.params.id;                
                 const dbRefCurrentProj = dbRefproj.child(project);
-                this.title = project;
-
+                context.title = project;
+                context.dbRef = dbRefCurrentProj;
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
+
                     
-                    context.names = subNames;
-                    context.times = subTimes;
-                    context.test = subTimes[0];
-                    context.navn = subNames[0];
-                    
-                    // return context;
+                    context.jobNames = subNames;
+                    context.jobTimes = subTimes;
                 });
-                // context.log(context);
-                
+
 
                 this.partial('projectTemp.template');
             });
 
             this.before({except: {path: '#/'}},function(){
-                // fortsættes ... 
+                
 
 
 
