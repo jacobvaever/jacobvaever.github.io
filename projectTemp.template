@@ -4,6 +4,7 @@
 
 })();
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 
 </script>
 
@@ -12,7 +13,7 @@
 </div>
 
 
-  <!-- Estimeret tid -->
+  <!-- Estimeret tid temp -->
   <div class="w3-container">
     <h2>Estimeret tid</h2>
     <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
