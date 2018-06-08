@@ -42,16 +42,20 @@
                 const dbRefCurrentProj = dbRefproj.child(project);
                 context.title = project;
                 context.dbRef = dbRefCurrentProj;
+
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
-
                     
                     context.jobNames = subNames;
                     context.jobTimes = subTimes;
                 });
+                context.color = ['','success', 'info','warning','danger'];
+                context.sum = null;
+                for( x in context.jobTimes){ context.sum += parseInt(context.jobTimes[x]);};
+                // context.log(context.sum);
 
-
+                
                 this.partial('projectTemp.template');
             });
 
