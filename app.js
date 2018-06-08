@@ -43,18 +43,21 @@
             });
             this.get('#/:id',function(context){
                 // Variables 
+                var x;
                 var project = context.params.id;                
                 const dbRefCurrentProj = dbRefproj.child(project);
                 context.title = project;
-
+                context.dbRef = dbRefCurrentProj;
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
+
                     
                     context.jobNames = subNames;
                     context.jobTimes = subTimes;
                 });
-                
+
+
                 this.partial('projectTemp.template');
             });
 

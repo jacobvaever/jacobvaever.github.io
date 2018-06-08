@@ -8,17 +8,18 @@
   <div class="w3-container">
     <h2>Estimeret tid </h2>
     <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
-  </div >
+  
 
-  <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
-    <div id="est-bar" class="progress">
-      <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar2" role="progressbar" style="width:20%">  
-          <%= title %>
-        </div>
-      <% } %>
+    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+      <div id="est-bar" class="progress">
+        <% var x; for( x in jobNames){%> 
+          <div class="progress-bar progress-bar2" role="progressbar" style="width:<%= jobTimes[x] %>%">  
+            <%= jobNames[x] %><br> {<%= jobTimes[x] %>}
+          </div>
+        <% } %>
+      </div>
     </div>
-  </div>
+  </div >
 
 
 
@@ -97,7 +98,7 @@
 </div>
 <script>
 (function(){
-
+alert('<%=dbRef%>');
 })();
 </script>
 
