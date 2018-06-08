@@ -72,8 +72,9 @@ dbRefproj.on('value', function(snapshot) {
 dbRefproj.on('child_added',function(snap){
     $("#list2").append('<li id="'+snap.key+'">'+snap.key+'</li>');
 });
-
-
+(function(){
+dbRefproj.child('Dutt/irlTimes/0').update(12);
+})();
 });
 
 </script>

@@ -16,17 +16,19 @@
             var temp = $('#name').val();
             
             if(temp != [] ){  
-            var subNames = [],subTimes = [];
+            var subNames = [],subTimes = [], irlTimes = [];
             for (i = 0; i < rows; i++){
                 subNames[i] = $("#subname"+i).val();
                 subTimes[i] = $("#subtime"+i).val();
+                irlTimes[i] = 0;
                 if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
                 break;
                 }
             }
             data = {
                     subNames,
-                    subTimes
+                    subTimes,
+                    irlTimes
                     };
     
             firebase.database().ref('projekter/' + temp).set(data,function(error){
@@ -50,7 +52,7 @@
     <p>Tilføj projektnavn med delprojekter og estimeret tid forneden</p>
 </div>
 
-<div class="container" >
+<div class="w3-container" >
         <table class="table">
           <thead>
             <tr>
@@ -59,15 +61,20 @@
                 <input type="text" id="name" class="form-control"/>
               </th>
               <th>
-                <button id="addproj" class="btn" >Tilføj Delopgave</button>
+                <input type="date" id="date" class="form-control" />
+              </th>
+              <th>
+                  <input type="date" id="date" class="form-control"  />
               </th>
             </tr> 
           </thead>
           <tbody>
             <tr>
-              <th class="input-group">
+              <th >
+                <span class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                 <input id="subname0" type="text" class="form-control"  placeholder="Navn på Delopgave"/>
+              </span>
               </th>
               <th>
                 <span class="input-group">
@@ -79,6 +86,7 @@
           </tbody>  
         </table>
         <button class="btn btn-info" id="save">Gem Projekt</button>
+        <button id="addproj" class="btn" >Tilføj Delopgave</button>
       </div>
     </div>
     <div class="w3-container">
