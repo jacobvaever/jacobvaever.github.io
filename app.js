@@ -22,12 +22,6 @@
         $("#sidebar").append('<a id="'+snap.key+'" href="#/'+snap.key+
             '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
     });
-   
-    // make contents for gant 
-    //dbRefproj.on('child_added',function(snap){
-      //  $("#gant").append('<a id="'+snap.key+
-        //    '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
-    //});
 
 
 
