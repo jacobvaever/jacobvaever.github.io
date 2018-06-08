@@ -4,7 +4,6 @@
 
 })();
 
-
 </script>
 
 <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
@@ -12,9 +11,9 @@
 </div>
 
 
-  <!-- Estimeret tid -->
+  <!-- Estimeret tid temp -->
   <div class="w3-container">
-    <h2>Estimeret tid</h2>
+    <h2>Estimeret tid temp</h2>
     <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
   </div >
 
@@ -32,7 +31,7 @@
 
 
   <!-- Virkelig tid -->
-  <div  class="w3-container" style="width:80%; position: absolute; left: 19%; top:22%">
+  <div  class="w3-container" >
     <h2>Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
     <p>Delopgavens varighed</p> 
@@ -75,7 +74,7 @@
   </div>   
 
   <!-- Forslag ændring -->
-  <div class="w3-container" style="position: absolute; left: 19%; top:64%">
+  <div class="w3-container" >
     <h2>Forslag til ændring</h2>
     <p>Her ses forslag til ændring..</p>
   </div>
