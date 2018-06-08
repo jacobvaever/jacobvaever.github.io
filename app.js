@@ -18,7 +18,6 @@
     
 
     // Make sidebar
-
     dbRefproj.on('child_added',function(snap){
         $("#sidebar").append('<a id="'+snap.key+'" href="#/'+snap.key+
             '" class="w3-bar-item w3-button">'+snap.key+'</a>');        
@@ -41,18 +40,26 @@
                 // Variables 
                 var project = context.params.id;                
                 const dbRefCurrentProj = dbRefproj.child(project);
-                this.title = project;
+                context.title = project;
 
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
-                
-                alert(subNames);
+                    
+                    context.jobNames = subNames;
+                    context.jobTimes = subTimes;
                 });
                 
-
                 this.partial('projectTemp.template');
             });
+
+            this.before({except: {path: '#/'}},function(){
+                
+
+
+
+            });
+
         });
 
         $(function(){

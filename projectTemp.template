@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <script>
 (function(){
 
@@ -50,6 +51,8 @@
     });
   </script>
 
+=======
+>>>>>>> f3b797ec741d871fe49176e893e66f8114b06053
 <div class="w3-container" style="font-family:courier; background-color:#ff6000db">
   <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
@@ -63,12 +66,11 @@
 
   <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
     <div id="est-bar" class="progress">
-      <div class="progress-bar progress-bar2" role="progressbar" style="width:10%">  
-       
-      </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:20%">
-       
-      </div>
+      <% var x; for( x in jobNames){%> 
+        <div class="progress-bar progress-bar2" role="progressbar" style="width:20%">  
+          <%= title %>
+        </div>
+      <% } %>
     </div>
   </div>
 
@@ -147,6 +149,11 @@
    </div>
  </div> 
 </div>
+<script>
+(function(){
+
+})();
+</script>
 
 
 
