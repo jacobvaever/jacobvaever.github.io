@@ -21,6 +21,7 @@
     </div>
   </div >
 
+<p></p>
 
 
   <!-- Virkelig tid -->
@@ -58,13 +59,25 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
+              
             </div>
-            
           </div>
-        </div>
         
+
+        <p></p>
+      <div class="progress" >
+        <div class="progress-bar progress-bar2" role="progressbar" style="width:{{id02}}%">  
+          Køkken
+        </div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" style="width:0%">
+          Bad
+        </div>
       </div>
-  </div>   
+  </div>
+
+<p></p>   
+
+
 
 
 
@@ -72,7 +85,7 @@
 
   <!-- Forslag ændring -->
   <div class="w3-container" >
-    <h2>Forslag til ændring</h2>
+    <h3>Forslag til ændring</h3>
     <p>Her ses forslag til ændring..</p>
   </div>
 
