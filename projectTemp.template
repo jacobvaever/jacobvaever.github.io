@@ -79,8 +79,7 @@
     <p>Her ses forslag til ændring..</p>
   </div>
 
-  <div class="w3-container" style="width:80%; position: absolute;
-  left: 19%; top:74%"> 
+  <div class="w3-container" > 
   <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p> 
      <div class="progress">
      <div id="køkken2" class="progress-bar progress-bar2" role="progressbar" style="width:10% ">
@@ -93,7 +92,6 @@
        Terasse
      </div>
    </div>
-   <p>Her ses et forslag til hvordan projektet kan tage den estimerede tid alligvel</p>
  </div> 
 </div>
 
