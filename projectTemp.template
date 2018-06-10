@@ -115,12 +115,12 @@
 <script>
 (function(){
   const dbRefCurrentproj = '<%= dbRef %>';
-  var est = '<%= est %>';
-  var ast = '<%= ast %>';
+  var est = [<%= est %>];
+  var ast = [<%= ast %>];
 
 
 
-  alert(ast)
+  alert(NewPlan(est,ast))
 
 
 
