@@ -47,7 +47,7 @@
 
 <div class="btn-group" style="font-family:inherit">
     <% var x; for( x in jobNames){%> 
-    <button id="btn<%=x%>" type="button" class="btn btn-basic btn-lg " data-toggle="modal" data-target="#myModal"> <%= jobNames[x] %> </button>
+    <button id="btn<%=x%>" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <%= jobNames[x] %> </button>
     </div>
     <% } %>
  </div>
