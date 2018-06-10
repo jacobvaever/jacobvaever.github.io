@@ -27,7 +27,7 @@
 
   <!-- Virkelig tid -->
   <div  class="w3-container" style="font-family:times">
-    <h2 style="font-family:times">Virkelig tid</h2>
+    <h2 style="font-family:Proxima Nova Soft">Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
     <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
 
