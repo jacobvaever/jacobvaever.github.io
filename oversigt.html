@@ -42,7 +42,6 @@
         });  
     });
 </script>
-<<<<<<< HEAD
 <div class="w3-container 3" style="font-family:courier; background-color:#ff6000db">
     <h1 style="font-family:Courier New;"> Oversigt</h1>
 </div>
@@ -52,22 +51,10 @@
 </div>
 
 <div class="w3-container" >
-=======
-<div class="w3-container 3" style="font-family:Courier New; background-color:#ff6000db">
-    <h1 style="font-family:Courier New;"> Oversigt</h1>
-</div>
-<div class="w3-container">
-    <h2 style="font-family:inherit;">Projekt</h2>
-    <p style="font-family:inherit;">Tilføj projektnavn med delprojekter og estimeret tid forneden</p>
-</div>
-
-<div class="w3-container" style="font-family:inherit;">
->>>>>>> c24f37b96c7c1e927ccf087a612364e6bd9f6b2b
         <table class="table">
           <thead>
             <tr>
               <th class="input-group">
-<<<<<<< HEAD
                 <span class="input-group-addon">Projektnavn</span>
                 <input type="text" id="name" class="form-control"/>
               </th>
@@ -76,16 +63,6 @@
               </th>
               <th>
                   <input type="date" id="date" class="form-control"  />
-=======
-                <span class="input-group-addon" style="font-family:inherit;">Projektnavn</span>
-                <input type="text" id="name" style="font-family:inherit;" class="form-control"/>
-              </th>
-              <th>
-                <input type="date" id="date" style="font-family:inherit;" class="form-control" />
-              </th>
-              <th>
-                  <input type="date" id="date" style="font-family:inherit;" class="form-control"  />
->>>>>>> c24f37b96c7c1e927ccf087a612364e6bd9f6b2b
               </th>
             </tr> 
           </thead>
@@ -94,83 +71,27 @@
               <th >
                 <span class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-<<<<<<< HEAD
                 <input id="subname0" type="text" class="form-control"  placeholder="Navn på Delopgave"/>
-=======
-                <input id="subname0" type="text" class="form-control"  style="font-family:inherit;" placeholder="Navn på Delopgave"/>
->>>>>>> c24f37b96c7c1e927ccf087a612364e6bd9f6b2b
               </span>
               </th>
               <th>
                 <span class="input-group">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-<<<<<<< HEAD
                   <input id="subtime0" type="number" class="form-control"  placeholder="Estimeret varighed"/>
-=======
-                  <input id="subtime0" type="number" class="form-control" style="font-family:inherit;"  placeholder="Estimeret varighed"/>
->>>>>>> c24f37b96c7c1e927ccf087a612364e6bd9f6b2b
                 </span>
               </th>
             </tr>
           </tbody>  
         </table>
-<<<<<<< HEAD
         <button class="btn btn-info" id="save">Gem Projekt</button>
         <button id="addproj" class="btn" >Tilføj Delopgave</button>
-=======
-        <button class="btn btn-info" id="save" style="font-family:inherit;">Gem Projekt</button>
-        <button id="addproj" class="btn btn-info" style="font-family:inherit;">Tilføj Delopgave</button>
->>>>>>> c24f37b96c7c1e927ccf087a612364e6bd9f6b2b
       </div>
     
 
 
 
-<<<<<<< HEAD
     <div class="w3-container">
         <h2>Gant diagram</h2>
         <p style="font-family:courier;"> Oversigt over projekter og om tid er overholdt</p>
-=======
-    <div class="w3-container" style="font-family:inherit">
-        <h2 style="font-family:inherit;">Gant diagram</h2>
-        <p style="font-family:inherit;"> Oversigt over projekter og om tid er overholdt</p>
-       
-        
-        <script type="text/javascript">
-        
-          const dbRefproj = firebase.database().ref().child('projekter');
-
-          google.charts.load('current', {'packages':['gantt']});
-          google.charts.setOnLoadCallback(drawChart);
-    
-          function drawChart() {
-            dbRefproj.on('child_added',function(snap){
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Navn');
-                data.addColumn('date', 'Start Date');
-                data.addColumn('date', 'End Date');
-                data.addColumn('number', 'Duration');
-                data.addColumn('number', 'Procent færdige');
-                data.addColumn('string', 'Dependencies');
-                data.addRow([
-                  [snap.key, new Date(2014, 2, 22), new Date(2014, 5, 20), null, 100, null],
-                  [snap.key, new Date(2014, 3, 22), new Date(2014, 5, 20), null, 100, null]
-                ]);
-            });
-
-            var options = {
-              height: 400,
-              gantt: {
-                trackHeight: 30
-              }
-            };
-
-            var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
-            chart.draw(data, options);
-          };
-        </script>
-        
-           
->>>>>>> c24f37b96c7c1e927ccf087a612364e6bd9f6b2b
     </div>
  
