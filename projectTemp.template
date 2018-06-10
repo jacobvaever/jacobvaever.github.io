@@ -1,14 +1,14 @@
 
-<div class="w3-container" style="font-family:courier; background-color:#ff6000db">
-  <h1 style="font-family:Courier New;"><%= title %></h1>
+<div class="w3-container" style="font-family:times; background-color:#ff6000db">
+  <h1 style="font-family:times;"><%= title %></h1>
 </div>
 
 <!-- Estimeret tid -->
-<div class="w3-container">
+<div class="w3-container" style="font-family:times;">
   <h2>Estimeret tid </h2>
   <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
 
-  <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+  <div  class="w3-container" style="font-family:times; width:80%; position: absolute; left: 19% ">  
     <div id="est-bar" class="progress">
       <% var x; for( x in jobNames){%> 
         <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
@@ -50,7 +50,7 @@
                   <h4 class="modal-title">Delprojektets varighed:</h4>
                 </div>
                 <div class="modal-body">
-                    <input type="text"  ng-model="id02" placeholder="Antal timer" style="width:100%" name="uname" required>
+                    <input type="text"  ng-model="id02" placeholder="Antal timer" style="font-family:times; width:100%" name="uname" required>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-success" data-dismiss="modal">Gem</button>
@@ -66,10 +66,10 @@
 
 
     <div class="progress" >
-      <div class="progress-bar progress-bar2" role="progressbar" style="width:0%">  
+      <div class="progress-bar progress-bar2" role="progressbar" style="font-family:times; width:0%">  
         Køkken
       </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="width:0%">
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="font-family:times; width:0%">
         Bad
       </div>
      </div>
@@ -89,10 +89,10 @@
     <p> Følgende model kommer med en anbefalet arbejdsfordeling, for at komme så tæt på den estimerede plan som muligt, og dermed nå deadlinen </p>
   
 
-    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+    <div  class="w3-container" style="font-family:times; width:80%; position: absolute; left: 19% ">  
       <div id="est-bar" class="progress">
         <% var x; for( x in jobNames){%> 
-          <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
+          <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="font-family:times; width:<%= jobTimes[x]/sum * 60 %>%">  
             <%= jobNames[x] %> {<%= jobTimes[x] %>}
           </div>
         <% } %>
