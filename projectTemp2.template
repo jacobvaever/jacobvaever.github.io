@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<p class="text-right" style="position: absolute; left:76.2%;top:58% ">Summen af den estimerede tid: <%=sum%> timer</p>
+<p id="summen" class="text-right" style="position: absolute; left:76.2%;top:58% ">Summen af den estimerede tid: <%=sum%> timer</p>
 
         
 <!-- Modal -->
@@ -103,7 +103,7 @@
     </div>
   </div>
 </div>
-<p class="text-right" style="position: absolute; left:76.2%;top:83% ">Summen af den estimerede tid: <%=sum%> timer</p>
+<p id="summen2" class="text-right" style="position: absolute; left:76.2%;top:83% ">Summen af den estimerede tid: <%=sum%> timer</p>
 
 
 <script>
@@ -130,21 +130,23 @@
     kaffe.splice(index,1,$("#newtime").val());
     var kaffesum = 0;
     for(x in kaffe) {kaffesum =+ kaffe[x]}
-    $("#bar"+index).css("width",($("#newtime").val()/<%=sum %> * 60) + '%');
-    $("#bar"+index).text(name + ' {' + $("#newtime").val() + '}');
+    $("#bar"+index).css("width",($("#newtime").val()/<%=sum %> * 80) + '%');
+    $("#bar"+index).html(name + ' <p>' + $("#newtime").val() + ' timer </p>');
 
     var realSum = 0;
     for(x in updates){
       realSum += (parseInt(updates[x]) ? parseInt(updates[x]) : est[x] );
     }
     console.log(realSum);
-    
+    $("#summen").text('Summen af den estimerede tid:'+ realSum);
+    $("#summen2").text('Summen af den estimerede tid:'+ realSum);
+
     plan = NewPlan(est,updates);
 
     for(x in plan){
-      $("#new"+x).width(plan[x]/<%= sum %> * 60 +'%');
+      $("#new"+x).width(plan[x]/<%= sum %> * 80 +'%');
     }
-    $("#new"+index).text(name + ' {' + plan[index] + '}');
+    $("#new"+index).html(name + ' <p>' + plan[index] + ' timer </p>');
 
     
 

@@ -123,6 +123,11 @@
     $("#bar"+index).css("width",($("#newtime").val()/<%=sum %> * 60) + '%');
     $("#bar"+index).text(name + ' {' + $("#newtime").val() + '}');
 
+    var realSum = 0;
+    for(x in updates){
+      realSum += (parseInt(updates[x]) ? parseInt(updates[x]) : est[x] );
+    }
+    console.log(realSum);
 
 
     plan = NewPlan(est,updates);
