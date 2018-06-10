@@ -63,19 +63,11 @@
                   <h4 class="modal-title" style="font-family:inherit">Delprojektets varighed:</h4>
                 </div>
                 <div class="modal-body">
-<<<<<<< HEAD
-                    <input type="text"  ng-model="id02" placeholder="Antal timer" style="font-family:inherit; width:100%" name="uname" required>
+                    <input id="newtime" type="text"  ng-model="id02" placeholder="Antal timer" style="font-family:inherit; width:100%" name="uname" required>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-success" data-dismiss="modal" style="font-family:inherit">Gem</button>
+                  <button id="update" type="button" class="btn btn-success" data-dismiss="modal" style="font-family:inherit">Gem</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal" style="font-family:inherit">Luk</button>
-=======
-                    <input id="newtime" type="text"  ng-model="id02" placeholder="Antal timer" style="font-family:times; width:100%" name="uname" required>
-                </div>
-                <div class="modal-footer">
-                  <button id="update" type="button" class="btn btn-success" data-dismiss="modal" style="font-family:times">Gem</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal" style="font-family:times">Luk</button>
->>>>>>> ce532fac4b085299b42d7438914605293e92c2c5
                 </div>
               </div>
               
