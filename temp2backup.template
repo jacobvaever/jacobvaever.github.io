@@ -9,40 +9,32 @@
   <h2 style="font-family:inherit">Estimeret tid </h2>
   <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
 
-  <div  class="w3-container" style="font-family:inherit; width=100%" >  
-    <div id="est-bar" class="progress" style="height:40px" >
+  <div  class="w3-container" style="font-family:inherit; width:80%; position: absolute; left: 19% ">  
+    <div id="est-bar" class="progress">
       <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
-          <%= jobNames[x] %> 
-          <p>(<%= jobTimes[x] %> timer)</p> 
+        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
+          <%= jobNames[x] %> {<%= jobTimes[x] %>}
         </div>
       <% } %>
     </div>
-    <p class="text-right">Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
 </div >
 
 <p></p>
 
-<style>
-       .button3{
-         background-color:#ff6000db;
-         color:white;
-         border-radius:8px;
-         padding: 8px 16px;
-       }
-</style>
+
 
 
 <!-- Virkelig tid -->
-<div class="w3-container" style="font-family:inherit; position: absolute; top:30% ">
+<div  class="w3-container" style="font-family:inherit;">
   <h2 style="font-family:inherit">Virkelig tid</h2>
   <p>Her ses hvor lang tid opgaverne har taget</p>  
   <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
+</div>
 
-  <div id="button" class="btn-toolbar" style="font-family:inherit">
+  <div id="button" class="btn-group" style="font-family:inherit">
     <% var x; for( x in jobNames){%> 
-    <button id="<%=x%>" type="button3" class="button3" data-toggle="modal" data-target="#myModal"> 
+    <button id="<%=x%>" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> 
     <%= jobNames[x] %> 
     </button>
     <% } %>
@@ -50,18 +42,17 @@
 
   <p></p>
 
-  <div  class="w3-container" style="font-family:inherit; width:100%" >  
-    <div id="ast-bar" class="progress" style="height:40px; width:157%" >
-      <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
-          <%= jobNames[x] %> 
-          <p>(<%= jobTimes[x] %> timer)</p> 
-        </div>
+  <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+    <div id="ast-bar" class="progress">
+    <% var x; for( x in jobNames){%> 
+      <div id="bar<%= x %>" class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
+      <%= jobNames[x] %> {<%= jobTimes[x] %>}
+      </div>
       <% } %>
     </div>
-    <p class="text-right" style="position: absolute; left:75% ">Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
-</div>
+
+<p></p>
 
 
         
@@ -89,20 +80,19 @@
 <p></p>
 
 <!-- Forslag ændring -->
-<div class="w3-container" style="font-family:inherit; position: absolute; top:65% ">
+<div class="w3-container">
   <h2 style="font-family:inherit"> Anbefalet arbejdsfordeling </h2>
   <p style="font-family:inherit"> Følgende model kommer med en anbefalet arbejdsfordeling, for at komme så tæt på den estimerede plan som muligt, og dermed nå deadlinen </p>
 
-<div  class="w3-container" style="font-family:inherit; width=100%" >  
-    <div id="new-bar" class="progress" style="height:40px; width:105%" >
+
+  <div  class="w3-container" style="font-family:inherit; width:80%; position: absolute; left: 19% ">  
+    <div id="new-bar" class="progress">
       <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
-          <%= jobNames[x] %> 
-          <p>(<%= jobTimes[x] %> timer)</p> 
+        <div id="new<%=x%>" class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="font-family:inherit; width:<%= jobTimes[x]/sum * 60 %>%">  
+          <%= jobNames[x] %> {<%=jobTimes[x]%>}
         </div>
       <% } %>
     </div>
-    <p class="text-right" >Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
 </div>
 
