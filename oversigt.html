@@ -1,97 +1,107 @@
 <!-- Tilføj projekt og gantt diagram -->
 <script type="text/javascript">
-   $(function(){
-        $("#addproj").click(function(){ // adds a new line of parameter 
-            var rows = $('table >tbody >tr').length;
-            $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
-            '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
-            '" type="text" class="form-control" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
-            '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
-            '</i></span><input id="subtime'+rows+'" type="number" class="form-control"'+
-            ' placeholder="Timer det tag"/></span></th></tr>');
-        });
-    
-        $("#save").click(function(){ // saves the project in the database under its name
-            var rows = $('table >tbody >tr').length;
-            var temp = $('#name').val();
-            
-            if(temp != [] ){  
-            var subNames = [],subTimes = [], irlTimes = [];
-            for (i = 0; i < rows; i++){
-                subNames[i] = $("#subname"+i).val();
-                subTimes[i] = $("#subtime"+i).val();
-                irlTimes[i] = 0;
-                if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
-                break;
-                }
-            }
-            data = {
-                    subNames,
-                    subTimes,
-                    irlTimes
-                    };
-    
-            firebase.database().ref('projekter/' + temp).set(data,function(error){
-                if(error) {
-                console.log('write to database failed!');
-                } else {
-                console.log('data saved successfully!');
-                };
-            });
-            }else{alert('Du skal som minimum udfylde Projektnavn')};             
-        });  
-    });
+  $(function(){
+       $("#addproj").click(function(){ // adds a new line of parameter 
+           var rows = $('table >tbody >tr').length;
+           $("tbody").append('<tr><th class="input-group"><span class="input-group-addon">'+
+           '<i class="glyphicon glyphicon-pencil"></i></span><input id="subname'+rows+
+           '" type="text" class="form-control" placeholder="Navn på Delopgave"/></th><th><span class="input-group">'+
+           '<span class="input-group-addon"><i class="glyphicon glyphicon-time">'+
+           '</i></span><input id="subtime'+rows+'" type="number" class="form-control"'+
+           ' placeholder="Estimeret varighed"/></span></th></tr>');
+       });
+   
+       $("#save").click(function(){ // saves the project in the database under its name
+           var rows = $('table >tbody >tr').length;
+           var temp = $('#name').val();
+           
+           if(temp != [] ){  
+           var subNames = [],subTimes = [], irlTimes = [];
+           for (i = 0; i < rows; i++){
+               subNames[i] = $("#subname"+i).val();
+               subTimes[i] = $("#subtime"+i).val();
+               irlTimes[i] = 0;
+               if(($("#subtime"+(i+1)).val() && $("#subname"+(i+1)).val()) == ""){
+               break;
+               }
+           }
+           data = {
+                   subNames,
+                   subTimes,
+                   irlTimes
+                   };
+   
+           firebase.database().ref('projekter/' + temp).set(data,function(error){
+               if(error) {
+               console.log('write to database failed!');
+               } else {
+               console.log('data saved successfully!');
+               };
+           });
+           }else{alert('Du skal som minimum udfylde Projektnavn')};             
+       });  
+   });
 </script>
 <div class="w3-container 3" style="font-family:courier; background-color:#ff6000db">
-    <h1 style="font-family:Courier New;"> Oversigt</h1>
+   <h1 style="font-family:Courier New;"> Oversigt</h1>
 </div>
 <div class="w3-container">
-    <h2>Projekt</h2>
-    <p>Tilføj projektnavn med delprojekter og estimeret tid forneden</p>
+   <h2>Projekt</h2>
+   <p>Tilføj projektnavn med delprojekter og estimeret tid forneden</p>
 </div>
 
-<div class="w3-container" >
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="input-group">
-                <span class="input-group-addon">Projektnavn</span>
-                <input type="text" id="name" class="form-control"/>
-              </th>
-              <th>
-                <input type="date" id="date" class="form-control" />
-              </th>
-              <th>
-                  <input type="date" id="date" class="form-control"  />
-              </th>
-            </tr> 
-          </thead>
-          <tbody>
-            <tr>
-              <th >
-                <span class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                <input id="subname0" type="text" class="form-control"  placeholder="Navn på Delopgave"/>
-              </span>
-              </th>
-              <th>
-                <span class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                  <input id="subtime0" type="number" class="form-control"  placeholder="Estimeret varighed"/>
-                </span>
-              </th>
-            </tr>
-          </tbody>  
-        </table>
-        <button class="btn btn-info" id="save">Gem Projekt</button>
-        <button id="addproj" class="btn" >Tilføj Delopgave</button>
-      </div>
-    
+<div class="w3-container" style="font-family:inherit">
+       <table class="table">
+         <thead>
+           <tr>
+             <th class="input-group" >
+               <span class="input-group-addon">Projektnavn</span>
+               <input type="text" id="name" class="form-control"/>
+             </th>
+             <th>
+               <th class="input-group">
+                 <span class="input-group-addon">Start</span>
+                 <input type="date" id="date" class="form-control" width="50%" />
+               </th>
+             </th>
+               <th>
+                 <th class="input-group">
+                   <span class="input-group-addon">Slut</span>
+                   <input type="date" id="date" class="form-control" width="50%"/>
+                 </th>
+               </th>
+             </tr>
+         </thead>
+       </table>
+
+       <table width="100%">
+         <tbody>
+           <tr>
+             <th >
+               <span class="input-group">
+               <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+               <input id="subname0" type="text" class="form-control"  placeholder="Navn på Delopgave"/>
+             </span>
+             </th>
+             <th>
+               <span class="input-group">
+                 <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                 <input id="subtime0" type="number" class="form-control"  placeholder="Estimeret varighed"/>
+               </span>
+             </th>
+           </tr>
+         </tbody>  
+       </table>
+
+       <p></p>
+       <button class="btn btn-info" id="save">Gem Projekt</button>
+       <button id="addproj" class="btn btn-info" >Tilføj Delopgave</button>
+   
+</div>
+
+   <div class="w3-container" style="font-family:inherit">
+       <h2>Gant diagram</h2>
+       <p> Oversigt over projekter og om tid er overholdt</p>
+   </div>
 
 
-
-    <div class="w3-container">
-        <h2>Gant diagram</h2>
-        <p style="font-family:courier;"> Oversigt over projekter og om tid er overholdt</p>
-    </div>
- 
