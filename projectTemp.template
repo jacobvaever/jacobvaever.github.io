@@ -24,7 +24,7 @@
 
 
   <!-- Virkelig tid -->
-  <div  class="w3-container" style="font-family:inherit">
+  <div  class="w3-container" style="font-family:inherit;">
     <h2 style="font-family:inherit">Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
     <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
@@ -99,19 +99,15 @@
       </div>
     </div>
   </div >
+
 <script>
 (function(){
   const dbRefCurrentproj = '<%= dbRef %>';
   var est = [<%= est %>];
   var ast = [<%= ast %>];
 
-  
-$(function(){
-  $("#button button").click(function(){
-    var updates = ast; 
-    alert('<%= jobNames %>'.indexOf("this.id));
-  });
-});
+
+
 
 
   alert(NewPlan(est,ast))
