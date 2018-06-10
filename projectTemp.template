@@ -21,21 +21,20 @@
       </div>
     </div>
   </div >
+<p> Samlet set er projektets estimerede tid: <%= sum %> timer</p>
+</div>
 
-<p></p>
-
-
-
+<p> </p>
 
 
   <!-- Virkelig tid -->
-  <div  class="w3-container" >
+<div  class="w3-container" >
     <h2>Virkelig tid</h2>
     <p>Her ses hvor lang tid opgaverne har taget</p>  
     <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
+</div>
 
-
-<div class="btn-group">
+<div class="btn-group" class="w3-container">
     <% var x; for( x in jobNames){%> 
     <button type="button" class="btn btn-basic btn-lg " data-toggle="modal" data-target="#myModal"> <%= jobNames[x] %> </button>
     </div>
@@ -68,7 +67,8 @@
 
 
 
-    <div class="progress" >
+    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+      <div id="est-bar" class="progress">
       <div class="progress-bar progress-bar2" role="progressbar" style="width:0%">  
         Køkken
       </div>
@@ -76,7 +76,7 @@
         Bad
       </div>
      </div>
-  </div>
+
 
 <p></p>   
 
@@ -84,15 +84,9 @@
 
 
 
-
-
-  <!-- Forslag ændring -->
-  <div class="w3-container">
-    <h2> Anbefalet arbejdsfordeling </h2>
-    <p> Følgende model kommer med en anbefalet arbejdsfordeling, for at komme så tæt på den estimerede plan som muligt, og dermed nå deadlinen </p>
-  
-
-    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+  <!-- Estimeret tid -->
+    <h2>Estimeret tid </h2>
+    <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
       <div id="est-bar" class="progress">
         <% var x; for( x in jobNames){%> 
           <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
@@ -100,13 +94,7 @@
           </div>
         <% } %>
       </div>
-    </div>
-  </div >
-<script>
-(function(){
-
-})();
-</script>
+<p></p>
 
 
 
