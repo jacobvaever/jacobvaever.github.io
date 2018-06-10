@@ -113,3 +113,18 @@ function NewPlan(est, aet){
       }
       return aet; 
     }
+
+// minor functions
+
+
+$(function(){
+
+    $("#update").click(function(){
+        alert($("#newtime").val());
+        // dbRefCurrentproj.child('irlTimes').update()
+        
+    });
+    $("button").click(function(){
+        alert(this.id);
+    });
+});
