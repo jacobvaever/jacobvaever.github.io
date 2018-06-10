@@ -112,7 +112,12 @@
 
   alert(NewPlan(est,ast))
 
-
+$(function(){
+  $("#button button").click(function(){
+    var updates = ast; 
+    alert('<%= jobNames %>'.indexOf("this.id));
+  });
+});
 
  
 
