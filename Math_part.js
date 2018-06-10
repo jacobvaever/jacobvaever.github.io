@@ -16,10 +16,11 @@ function NewPlan(est, aet){
         sum_aet = sum_aet + aet[i]; 
     }
     
+
     // Checks if a projekt is done
     if(aet.findIndex(k => k==0)==-1 ){
         return aet; 
-    } else if(sum_eat == 0) {
+    } else if(sum_aet == 0) {
         return est; 
     } else if(aet.find(k => k==0) == 0) {
         
@@ -113,18 +114,3 @@ function NewPlan(est, aet){
       }
       return aet; 
     }
-
-// minor functions
-
-
-$(function(){
-
-    $("#update").click(function(){
-        alert($("#newtime").val());
-        // dbRefCurrentproj.child('irlTimes').update()
-        
-    });
-    $("button").click(function(){
-        alert(this.id);
-    });
-});
