@@ -3,26 +3,27 @@
   <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
 
+<!-- Estimeret tid -->
+<div class="w3-container">
+  <h2>Estimeret tid </h2>
+  <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
 
-
-  <!-- Estimeret tid -->
-  <div class="w3-container">
-    <h2>Estimeret tid </h2>
-    <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
-  
-
-    <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
-      <div id="est-bar" class="progress">
-        <% var x; for( x in jobNames){%> 
-          <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
-            <%= jobNames[x] %> {<%= jobTimes[x] %>}
-          </div>
-        <% } %>
-      </div>
+  <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
+    <div id="est-bar" class="progress">
+      <% var x; for( x in jobNames){%> 
+        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
+          <%= jobNames[x] %> {<%= jobTimes[x] %>}
+        </div>
+      <% } %>
     </div>
+<<<<<<< HEAD
   </div >
 <p> Samlet set er projektets estimerede tid: <%= sum %> timer</p>
 </div>
+=======
+  </div>
+</div >
+>>>>>>> e83feb5c68df06147830dabaa4e2113b840cd844
 
 <p> </p>
 
