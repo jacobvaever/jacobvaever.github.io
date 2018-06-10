@@ -117,14 +117,17 @@ function NewPlan(est, aet){
 // minor functions
 
 
-$(function(){
+// $(function(){
 
-    $("#update").click(function(){
-        alert($("#newtime").val());
-        // dbRefCurrentproj.child('irlTimes').update()
+//     $("#update").click(function(){
+//         alert($("#newtime").val());
+//         // dbRefCurrentproj.child('irlTimes').update()
         
-    });
-    $("button").click(function(){
-        alert(this.id);
-    });
-});
+//     });
+//     $("#button button").click(function(){
+//         var updates = ast;
+//         updates = ast[this.id];
+//         alert(updates);
+//     });
+    
+// });
