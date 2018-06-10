@@ -52,7 +52,7 @@
   <div  class="w3-container" style="font-family:inherit; width:100%" >  
     <div id="ast-bar" class="progress" style="height:40px; width:163%" >
       <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
+        <div id="bar<%= x %>"  class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
           <p>(<%= jobTimes[x] %> timer)</p> 
         </div>
@@ -95,7 +95,7 @@
 <div  class="w3-container" style="font-family:inherit; width=100%" >  
     <div id="new-bar" class="progress" style="height:40px; width:105%" >
       <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
+        <div id="new<%=x%>" class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
           <p>(<%= jobTimes[x] %> timer)</p> 
         </div>
