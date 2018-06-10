@@ -44,7 +44,7 @@
   <div  class="w3-container" style="width:80%; position: absolute; left: 19% ">  
     <div id="ast-bar" class="progress">
     <% var x; for( x in jobNames){%> 
-      <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
+      <div id="bar<%= x %>" class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 60 %>%">  
       <%= jobNames[x] %> {<%= jobTimes[x] %>}
       </div>
       <% } %>
@@ -66,7 +66,7 @@
         <h4 class="modal-title" style="font-family:inherit">Delprojektets varighed:</h4>
       </div>
       <div class="modal-body">
-          <input id="newtime" type="number"  ng-model="id02" placeholder="Antal timer" style="font-family:inherit; width:100%" name="uname" required>
+          <input id="newtime" type="number"  autofocus placeholder="Antal timer" style="font-family:inherit; width:100%" name="uname" required>
       </div>
       <div class="modal-footer">
         <button id="update" type="button" class="btn btn-success" data-dismiss="modal" style="font-family:inherit">Gem</button>
@@ -101,6 +101,7 @@
   var est = [<%= est %>];
   var ast = [<%= ast %>];
   var index = 0;
+  var x;
 
 
 
@@ -109,10 +110,18 @@
   
   $("#update").click(function(){
     updates = [0,0,0];
-    console.log("the new time: "$("#newtime").val()+"  the index "+index);
+    console.log("the new time: "+$("#newtime").val()+"  the index "+index);
     updates[index] = $("#newtime").val();
+    console.log(updates);
+    var kaffe = est;
+    kaffe.splice(index,1,$("#newtime").val());
+    var kaffesum = 0;
+    for(x in kaffe) {kaffesum =+ kaffe[x]}
+    console.log('kaffesum: ' + kaffesum);
+    $("#bar"+index).css("width",($("#newtime").val()/kaffesum * 60) + '%');
+    console.log($("#newtime").val()/kaffesum * 60);
     
-    return dbRefCurrentproj.child('irlTimes').set(updates);
+
     
   });
   $("#button button").click(function(){
@@ -120,6 +129,8 @@
     index = this.id;
 
   });
+  
+  
 
   alert(plan)
 
