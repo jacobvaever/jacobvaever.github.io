@@ -71,7 +71,7 @@
                 // context.log(context.sum);
 
                 
-                this.partial('temp2backup.template');
+                this.partial('projectTemp2.template');
             });
 
             this.before({except: {path: '#/'}},function(){
