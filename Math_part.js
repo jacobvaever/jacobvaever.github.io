@@ -92,27 +92,27 @@ function workLevel(est,aet1, cal, level){
         } else if (diff > 0 && aet1[i]==0){
           level[i] = 'Nybegynder';
         }
-      }
-      return level; 
     }
+    return level; 
+}
     
-    function sums(x){
-      // Calculates sum for an input vector x
-      var sum_x = 0; 
-      for (i=0; i<x.length; i++){
-          sum_x = sum_x + x[i]; 
-      }
-      return sum_x; 
+function sums(x){
+    // Calculates sum for an input vector x
+    var sum_x = 0; 
+    for (i=0; i<x.length; i++){
+        sum_x = sum_x + x[i]; 
     }
+    return sum_x; 
+}
     
-    function realBar(est, aet){
-      // Real bar vector function to input the estimated values 
-      while(aet.findIndex(k => k==0)!=-1){
+function realBar(est, aet){
+    // Real bar vector function to input the estimated values 
+    while(aet.findIndex(k => k==0)!=-1){
         k = aet.findIndex(k => k==0);
         aet[k] = est[k]; 
-      }
-      return aet; 
     }
+     return aet; 
+}
 
 // minor functions
 
