@@ -75,17 +75,7 @@
           </div>
 
           <p></p>
-
-
-
-    <div class="progress" style="font-family:inherit">
-      <div class="progress-bar progress-bar2" role="progressbar" style="font-family:inherit; width:0%">  
-        Køkken
-      </div>
-      <div class="progress-bar progress-bar-warning" role="progressbar" style="font-family:inherit; width:0%">
-        Bad
-      </div>
-    </div>
+          </div>
     
   </div>
 </div>
@@ -112,6 +102,7 @@
       </div>
     </div>
   </div >
+
 <script>
 (function(){
   const dbRefCurrentproj = '<%= dbRef %>';
