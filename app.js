@@ -47,13 +47,27 @@
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
                     var subTimes = snap.child('subTimes').val();
+                    var irlTimes = snap.child('irlTimes').val();
                     
                     context.jobNames = subNames;
                     context.jobTimes = subTimes;
+                    context.newTimes = irlTimes;
                 });
                 context.color = ['','success', 'info','warning','danger'];
                 context.sum = null;
                 for( x in context.jobTimes){ context.sum += parseInt(context.jobTimes[x]);};
+                 
+                function toRealNumb(array){
+                    for( var i in array){
+                        array[i] = parseInt(array[i]);
+                    } 
+                return array;
+                }
+                context.est = toRealNumb(context.jobTimes);
+                context.ast = toRealNumb(context.newTimes)
+
+
+                //   context.log(toRealNumb(context.jobTimes))
                 // context.log(context.sum);
 
                 

@@ -16,11 +16,12 @@ function NewPlan(est, aet){
         sum_aet = sum_aet + aet[i]; 
     }
     
+
     // Checks if a projekt is done
     if(aet.findIndex(k => k==0)==-1 ){
-        // var k = aet.findIndex(k => k==0); 
-        // alert(k)
         return aet; 
+    } else if(sum_aet == 0) {
+        return est; 
     } else if(aet.find(k => k==0) == 0) {
         
         // While-loop to replace all zeros with new values
@@ -50,7 +51,7 @@ function NewPlan(est, aet){
         } 
         return aet;
     } 
-    }
+}
     
     function timeDiff(sum_est, sum_aet){
       // Colorcode the differences between estimated and realtime
