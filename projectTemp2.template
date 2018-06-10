@@ -37,8 +37,7 @@
 <!-- Virkelig tid -->
 <div class="w3-container" style="font-family:inherit; position: absolute; top:30% ">
   <h2 style="font-family:inherit">Virkelig tid</h2>
-  <p>Her ses hvor lang tid opgaverne har taget</p>  
-  <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
+  <p>Her ses delprojekternes reelle tider. Når et delprojekt er færdigt, noteres den reelle varighed.</p> 
 
   <div id="button" class="btn-toolbar" style="font-family:inherit">
     <% var x; for( x in jobNames){%> 
@@ -51,7 +50,7 @@
   <p></p>
 
   <div  class="w3-container" style="font-family:inherit; width:100%" >  
-    <div id="ast-bar" class="progress" style="height:40px; width:157%" >
+    <div id="ast-bar" class="progress" style="height:40px; width:163%" >
       <% var x; for( x in jobNames){%> 
         <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
@@ -59,10 +58,10 @@
         </div>
       <% } %>
     </div>
-    <p class="text-right" style="position: absolute; left:75% ">Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
 </div>
 
+<p class="text-right" style="position: absolute; left:76.2%;top:58% ">Summen af den estimerede tid: <%=sum%> timer</p>
 
         
 <!-- Modal -->
@@ -102,9 +101,10 @@
         </div>
       <% } %>
     </div>
-    <p class="text-right" >Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
 </div>
+<p class="text-right" style="position: absolute; left:76.2%;top:83% ">Summen af den estimerede tid: <%=sum%> timer</p>
+
 
 <script>
 unction NewPlan(est, aet){
