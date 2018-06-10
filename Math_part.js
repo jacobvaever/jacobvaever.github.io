@@ -19,7 +19,7 @@ function NewPlan(est, aet){
     // Checks if a projekt is done
     if(aet.findIndex(k => k==0)==-1 ){
         return aet; 
-    } else if(sum_eat == 0) {
+    } else if(sum_aet == 0) {
         return est; 
     } else if(aet.find(k => k==0) == 0) {
         

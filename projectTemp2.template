@@ -99,7 +99,8 @@
   var est = [<%= est %>];
   var ast = [<%= ast %>];
 
-  alert(NewPlan(est,ast))
+  var plan = NewPlan(est,ast);
+  alert(plan)
 
 
 
