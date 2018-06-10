@@ -34,6 +34,8 @@
 <h2>Sum af den virkelige progress bar:</h2>
 <p id="SumReal"></p>
 
+<p id="sum" ></p>
+
 
 <script>
 function NewPlan(est, aet){
@@ -160,6 +162,15 @@ var aet = [20, 0];
 var aet1 = [6, 7, 0, 0, 0]; 
 var aet2 = [6, 7, 0, 0, 0]; 
 var level = ['', '','', '','']; 
+
+var updates = aet;
+var x;
+var realSum = 0;
+    for(x in updates){
+      realSum += (updates[x] ? updates[x] : est[x] );
+    }
+    console.log(realSum);
+document.getElementById("sum").innerHTML = realSum;
 
 //Test of function NewPlan()
 var x = NewPlan(est, aet); 
