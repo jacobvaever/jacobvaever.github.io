@@ -9,7 +9,7 @@
   <h2 style="font-family:inherit">Estimeret tid </h2>
   <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
 
-  <div  class="w3-container" style="font-family:inherit; width=100%" >  
+  <div  class="w3-container bar-cont" style="font-family:inherit; " >  
     <div id="est-bar" class="progress" style="height:40px" >
       <% var x; for( x in jobNames){%> 
         <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
@@ -35,7 +35,7 @@
 
 
 <!-- Virkelig tid -->
-<div class="w3-container" style="font-family:inherit; position: absolute; top:30% ">
+<div class="w3-container" style="font-family:inherit;  top:30% ">
   <h2 style="font-family:inherit">Virkelig tid</h2>
   <p>Her ses delprojekternes reelle tider. Når et delprojekt er færdigt, noteres den reelle varighed.</p> 
 
@@ -49,8 +49,8 @@
 
   <p></p>
 
-  <div  class="w3-container" style="font-family:inherit; width:100%" >  
-    <div id="ast-bar" class="progress" style="height:40px; width:163%" >
+  <div  class="w3-container bar-cont" style="font-family:inherit; " >  
+    <div id="ast-bar" class="progress" style="height:40px; " >
       <% var x; for( x in jobNames){%> 
         <div id="bar<%= x %>"  class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
@@ -58,10 +58,11 @@
         </div>
       <% } %>
     </div>
+    <p id="summen" class="text-right" >Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
 </div>
 
-<p id="summen" class="text-right" style="position: absolute; left:76.2%;top:58% ">Summen af den estimerede tid: <%=sum%> timer</p>
+
 
         
 <!-- Modal -->
@@ -88,12 +89,12 @@
 <p></p>
 
 <!-- Forslag ændring -->
-<div class="w3-container" style="font-family:inherit; position: absolute; top:65% ">
+<div class="w3-container" style="font-family:inherit; top:65% ">
   <h2 style="font-family:inherit"> Anbefalet arbejdsfordeling </h2>
   <p style="font-family:inherit"> Følgende model kommer med en anbefalet arbejdsfordeling, for at komme så tæt på den estimerede plan som muligt, og dermed nå deadlinen </p>
 
-<div  class="w3-container" style="font-family:inherit; width=100%" >  
-    <div id="new-bar" class="progress" style="height:40px; width:105%" >
+<div  class="w3-container bar-cont" style="font-family:inherit; " >  
+    <div id="new-bar" class="progress" style="height:40px; " >
       <% var x; for( x in jobNames){%> 
         <div id="new<%=x%>" class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
@@ -101,9 +102,10 @@
         </div>
       <% } %>
     </div>
+    <p id="summen2" class="text-right" >Summen af den estimerede tid: <%=sum%> timer</p>
   </div>
 </div>
-<p id="summen2" class="text-right" style="position: absolute; left:76.2%;top:83% ">Summen af den estimerede tid: <%=sum%> timer</p>
+
 
 
 <script>
