@@ -15,7 +15,7 @@
     // Define database reference 
     const dbRefproj = firebase.database().ref().child('projekter');
 
-    
+     
 
     // Make sidebar
     dbRefproj.on('child_added',function(snap){
@@ -43,6 +43,7 @@
                 const dbRefCurrentProj = dbRefproj.child(project);
                 context.title = project;
                 context.dbRef = dbRefCurrentProj;
+                context.log(context);
 
                 dbRefCurrentProj.on('value',function(snap){
                     var subNames = snap.child('subNames').val();
@@ -71,8 +72,9 @@
                 // context.log(context.sum);
 
                 
-                this.partial('projectTemp2.template');
+                context.partial('projectTemp.template');
             });
+            
 
             this.before({except: {path: '#/'}},function(){
                 
@@ -81,7 +83,9 @@
 
             });
 
+
         });
+        
 
         $(function(){
             app.run('#/');

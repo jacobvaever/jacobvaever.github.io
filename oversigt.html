@@ -26,10 +26,12 @@
                }
            }
            data = {
-                   subNames,
-                   subTimes,
-                   irlTimes
-                   };
+                  startDate: $('#dateB').val(),
+                  endDate: $('#dateE').val(),
+                  subNames,
+                  subTimes,
+                  irlTimes
+                  };
    
            firebase.database().ref('projekter/' + temp).set(data,function(error){
                if(error) {
@@ -42,7 +44,7 @@
        });  
    });
 </script>
-<div class="w3-container 3" style="font-family:courier; background-color:#ff6000db">
+<div class="w3-container" style="font-family:courier; background-color:#ff6000db">
    <h1 style="font-family:Courier New;"> Oversigt</h1>
 </div>
 <div class="w3-container">
@@ -61,13 +63,13 @@
              <th>
                <th class="input-group">
                  <span class="input-group-addon">Start</span>
-                 <input type="date" id="date" class="form-control" width="50%" />
+                 <input type="date" id="dateB" class="form-control" width="50%" />
                </th>
              </th>
                <th>
                  <th class="input-group">
                    <span class="input-group-addon">Slut</span>
-                   <input type="date" id="date" class="form-control" width="50%"/>
+                   <input type="date" id="dateE" class="form-control" width="50%"/>
                  </th>
                </th>
              </tr>

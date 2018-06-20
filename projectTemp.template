@@ -1,15 +1,13 @@
-<script src="Math_part.js" type="text/javascript"></script>
-
 <div class="w3-container" style="font-family:Courier New; background-color:#ff6000db">
   <h1 style="font-family:Courier New;"><%= title %></h1>
 </div>
 
 <!-- Estimeret tid -->
 <div class="w3-container" style="font-family:inherit;">
-  <h2 style="font-family:inherit"> Estimeret tid </h2>
-  <p>Her ses hvor lang tid hver delopgave er estimeret til at tage</p>
+  <h2 style="font-family:inherit">Estimeret tid </h2>
+  <p>Her ses hvor lang tid opgaverne var estimeret til at tage</p>
 
-  <div  class="w3-container" style="font-family:inherit; width=100%" >  
+  <div  class="w3-container bar-cont" style="font-family:inherit; " >  
     <div id="est-bar" class="progress" style="height:40px" >
       <% var x; for( x in jobNames){%> 
         <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
@@ -24,7 +22,6 @@
 
 <p></p>
 
-
 <style>
        .button3{
          background-color:#ff6000db;
@@ -34,33 +31,37 @@
        }
 </style>
 
-<!-- Virkelig tid -->
-<div class="w3-container" style="font-family:inherit; position: absolute; top:30% ">
-    <h2 style="font-family:inherit">Virkelig tid</h2>
-    <p>Her ses hvor lang tid opgaverne har taget</p>  
-    <p>Tryk pågældende knap når delopgaven er færdig. Indtast derefter antallet timer delopgaven tog:</p> 
 
+<!-- Virkelig tid -->
+<div class="w3-container" style="font-family:inherit;  top:30% ">
+  <h2 style="font-family:inherit">Virkelig tid</h2>
+  <p>Her ses delprojekternes reelle tider. Når et delprojekt er færdigt, noteres den reelle varighed.</p> 
 
   <div id="button" class="btn-toolbar" style="font-family:inherit">
     <% var x; for( x in jobNames){%> 
-    <button id="<%=x%>" type="button3" class="button3" data-toggle="modal" data-target="#myModal"> <%= jobNames[x] %> 
-      </button>
+    <button id="<%=x%>" type="button3" class="button3" data-toggle="modal" data-target="#myModal"> 
+    <%= jobNames[x] %> 
+    </button>
     <% } %>
   </div>
 
   <p></p>
-  <div  class="w3-container" style="font-family:inherit; width:100%" >  
-    <div id="ast-bar" class="progress" style="height:40px; width:157%" >
+
+  <div  class="w3-container bar-cont" style="font-family:inherit; " >  
+    <div id="ast-bar" class="progress" style="height:40px; " >
       <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
+        <div id="bar<%= x %>"  class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
           <p>(<%= jobTimes[x] %> timer)</p> 
         </div>
       <% } %>
     </div>
-    <p class="text-right" style="position: absolute; left:75% ">Summen af den estimerede tid: <%=sum%> timer</p>
+    <p id="summen" class="text-right" >Summen af den Virkelige tid: <%=sum%> timer</p>
   </div>
 </div>
+
+
+
         
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog" style="font-family:inherit">
@@ -73,7 +74,7 @@
         <h4 class="modal-title" style="font-family:inherit">Delprojektets varighed:</h4>
       </div>
       <div class="modal-body">
-          <input id="newtime" type="number"  ng-model="id02" placeholder="Antal timer" style="font-family:inherit; width:100%" name="uname" required>
+          <input id="newtime" type="number"  autofocus placeholder="Antal timer" style="font-family:inherit; width:100%" name="uname" required>
       </div>
       <div class="modal-footer">
         <button id="update" type="button" class="btn btn-success" data-dismiss="modal" style="font-family:inherit">Gem</button>
@@ -86,53 +87,77 @@
 <p></p>
 
 <!-- Forslag ændring -->
-<div class="w3-container" style="font-family:inherit; position: absolute; top:65% ">
+<div class="w3-container" style="font-family:inherit; top:65% ">
   <h2 style="font-family:inherit"> Anbefalet arbejdsfordeling </h2>
   <p style="font-family:inherit"> Følgende model kommer med en anbefalet arbejdsfordeling, for at komme så tæt på den estimerede plan som muligt, og dermed nå deadlinen </p>
 
-<div  class="w3-container" style="font-family:inherit; width=100%" >  
-    <div id="new-bar" class="progress" style="height:40px; width:105%" >
+<div  class="w3-container bar-cont" style="font-family:inherit; " >  
+    <div id="new-bar" class="progress" style="height:40px; " >
       <% var x; for( x in jobNames){%> 
-        <div class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
+        <div id="new<%=x%>" class="progress-bar progress-bar-<%= color[x%5] %>" role="progressbar" style="width:<%= jobTimes[x]/sum * 80 %>%">  
           <%= jobNames[x] %> 
           <p>(<%= jobTimes[x] %> timer)</p> 
         </div>
       <% } %>
     </div>
-    <p class="text-right" >Summen af den estimerede tid: <%=sum%> timer</p>
+    <p id="summen2" class="text-right" >Summen af den Anbefalede tid: <%=sum%> timer</p>
   </div>
 </div>
+
+
 
 <script>
 (function(){
   const dbRefCurrentproj = '<%= dbRef %>';
   var est = [<%= est %>];
   var ast = [<%= ast %>];
+  navne = '<%= jobNames %>';
+  name = [];
   var index = 0;
-
-
-
-
+  var x;
+  updates = ast;
   var plan = NewPlan(est,ast);
   
+
+  
+
   $("#update").click(function(){
-    updates = [0,0,0];
-    console.log("the new time: "$("#newtime").val()+"  the index "+index);
-    updates[index] = $("#newtime").val();
     
-    return dbRefCurrentproj.child('irlTimes').set(updates);
+    updates[index] = $("#newtime").val();
+    console.log(updates);
+    var kaffe = est;
+    kaffe.splice(index,1,$("#newtime").val());
+    var kaffesum = 0;
+    for(x in kaffe) {kaffesum =+ kaffe[x]}
+    $("#bar"+index).css("width",($("#newtime").val()/<%=sum %> * 80) + '%');
+    $("#bar"+index).html(name + ' <p>' + $("#newtime").val() + ' timer </p>');
+
+    var realSum = 0;
+    for(x in updates){
+      realSum += (parseInt(updates[x]) ? parseInt(updates[x]) : est[x] );
+    }
+    console.log(realSum);
+    $("#summen").text('Summen af den estimerede tid:'+ realSum);
+    $("#summen2").text('Summen af den estimerede tid:'+ realSum);
+
+    plan = NewPlan(est,updates);
+
+    for(x in plan){
+      $("#new"+x).width(plan[x]/<%= sum %> * 80 +'%');
+    }
+    $("#new"+index).html(name + ' <p>' + plan[index] + ' timer </p>');
+
+    
+
     
   });
   $("#button button").click(function(){
-    console.log(this.id);
     index = this.id;
+    name = document.getElementById(this.id).innerHTML;
 
   });
-
-  alert(plan)
-
-
-
+  
+  
  
 
 })();
